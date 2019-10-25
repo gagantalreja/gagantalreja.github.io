@@ -18,14 +18,24 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
     <script>
         alert("This site is still under development.");
+
     </script>
     <!--    <script src="main.js"></script>  -->
 </head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150949917-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-150949917-1');
+</script>
+
 
 <style>
     body {
         background-color: black;
-
     }
 
     .navbar {
@@ -187,7 +197,7 @@
     }
 
     .fa {
-        padding: 20px;
+        padding: 5px;
         font-size: 25px;
         width: 70px;
         text-align: center;
@@ -216,6 +226,12 @@
         text-decoration: none;
     }
 
+    @media screen and (max-width: 1024px) {
+        .content {
+            margin: auto;
+        }
+    }
+
     @media screen and (max-width: 600px) {
         .bg-1 h1 {
             font-size: 2.3em;
@@ -242,6 +258,7 @@
             padding-bottom: 10px;
         }
     }
+
 </style>
 
 
@@ -328,19 +345,22 @@
                 <a class="fa fa-twitter-square" href="https://twitter.com/gagan_talreja" target="_blank"></a>
                 <a class="fa fa-linkedin-square" href="https://in.linkedin.com/in/gagantalreja" target="_blank"></a>
                 <a class="fa fa-github-square" href="https://github.com/gagantalreja" target="_blank"></a>
-                <a class="fa fa-instagram" href="https://www.instagram.com/gagantalreja/" target="_blank"></a>
+                <a class="fa fa-instagram" href="https://www.instagram.com/gagantalreja" target="_blank"></a>
             </div>
         </div>
     </div>
 </body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
 <script>
     var ctx = document.getElementById("canvas");
-    var lab = ["Python", "Java", "MySQL", "DSA", "Web Dev.", "ML-AI", "Big Data"];
-    var labVals = [95, 80, 85, 70, 75, 60, 65];
+    console.log(window.screen.width);
+    var lab = ["Python", "Java", "MySQL", "DSA", "Web Dev.", "Flask", "Big Data"];
+    var labVals = [95, 80, 85, 70, 75, 70, 65];
     var backColor = ['rgba(54, 162, 235, 0.2)',
         'rgba(255, 206, 86, 0.2)',
         'rgba(75, 192, 192, 0.2)',
@@ -366,9 +386,10 @@
         'rgba(153, 102, 255, 1)',
         'rgba(255, 159, 64, 1)'
     ];
-
+    // var type = 'bar';
+    var type = 'horizontalBar';
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: type,
         data: {
             labels: lab,
             datasets: [{
@@ -386,8 +407,9 @@
                 xAxes: [{
                     gridLines: false,
                     ticks: {
+                        beginAtZero: true,
                         padding: 10,
-                        fontSize: 15,
+                        fontSize: (window.screen.width / 100) + 5,
                         fontFamily: "'Fira Sans', sans-serif"
                     }
                 }],
@@ -395,7 +417,7 @@
                     ticks: {
                         beginAtZero: true,
                         padding: 10,
-                        fontSize: 15,
+                        fontSize: (window.screen.width / 100) + 5,
                         fontFamily: "'Fira Sans', sans-serif"
                     },
 
@@ -403,7 +425,9 @@
             }
         }
     });
+
 </script>
+
 <script>
     $(document).ready(function() {
         // Add smooth scrolling to all links in navbar + footer link
@@ -420,6 +444,7 @@
 
                 // Using jQuery's animate() method to add smooth page scroll
                 // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                console.log($(hash).offset().top);
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
                 }, 900, function() {
@@ -439,4 +464,7 @@
         $('p').fadeIn(4000).removeClass('hiddenB');
         $('.scroll-downs').fadeIn(4000).removeClass('hidden');
     });
-</script></html>
+
+</script>
+
+</html>
