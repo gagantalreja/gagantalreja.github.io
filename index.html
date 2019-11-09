@@ -16,20 +16,24 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <script>
         alert("This site is still under development.");
-
     </script>
     <!--    <script src="main.js"></script>  -->
 </head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150949917-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-150949917-1');
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-150949917-1');
 </script>
 
 
@@ -101,47 +105,28 @@
     }
 
     .hi {
-        width: 20%;
+        width: 15%;
         border: 2px solid blue;
         border-radius: 50%;
+        -webkit-transition: -webkit-transform .8s ease-in-out;
+        transition: transform .8s ease-in-out;
+    }
+
+    .hi:hover {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
     }
 
     .hi-txt {
         font-weight: 600;
     }
 
-    /*
-        -webkit-animation: mover 1.5s infinite alternate;
-        animation: mover 1.5s infinite alternate;
-    }
-
-    @-webkit-keyframes mover {
-        0% {
-            transform: translateY(0);
-        }
-
-        100% {
-            transform: translateY(-5px);
-        }
-    }
-
-    @keyframes mover {
-        0% {
-            transform: translateY(0);
-        }
-
-        100% {
-            transform: translateY(-5px);
-        }
-    }
-*/
-
     .content {
         background-color: whitesmoke;
         /*        padding-top: 3em;*/
         padding-bottom: 100px;
         padding-top: 35px;
-        border-radius: 25px;
+        border-radius: 10px;
         margin-right: 50px;
         margin-left: 50px;
     }
@@ -154,6 +139,29 @@
         color: black;
     }
 
+    .down-form {
+        margin-top: 30px;
+    }
+
+    .download-btn {
+        background: #4169E1;
+        border: 1.5px solid black;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+    }
+
+    .download-btn:hover {
+        background: transparent;
+        border-color: white;
+        color: white;
+        /*
+        -webkit-transition-duration: 0.4s;
+         Safari 
+        transition-duration: 0.4s;
+*/
+    }
+
     .head1 {
         font-size: 45px;
         font-family: 'Acme';
@@ -161,8 +169,10 @@
 
     .text {
         padding-top: 1em;
+        /*
         margin-left: 25px;
         margin-right: 25px;
+*/
 
     }
 
@@ -173,13 +183,68 @@
         font-family: 'Fira Sans', sans-serif;
     }
 
+    .text2 {
+        font-size: 17px;
+        line-height: 2em;
+        font-family: 'Fira Sans', sans-serif;
+        padding-bottom: 20px;
+    }
+
+    #abtHead {
+        padding-top: 30px;
+    }
+
+    #abtTxt {
+        /*        padding-bottom: 100px;*/
+        padding-top: 50px;
+    }
+
     #canvas {
-        width: auto;
+        width: 40px;
         height: auto;
     }
 
     .skill-chart {
         padding-bottom: 80px;
+    }
+
+    .head2 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 25px;
+    }
+
+    .head3 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 22px;
+    }
+
+    .gitlink {
+        background: transparent;
+        color: black;
+        border-color: black;
+        font-family: 'Montserrat', sans-serif;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+    }
+
+    .gitlink:hover {
+        background: black;
+        color: white;
+        border-color: black;
+        /*
+         -webkit-transition-duration: 0.4s;  Safari 
+        transition-duration: 0.4s;
+*/
+    }
+
+    .border-div {
+        margin-top: 50px;
+        border: 0.5px solid darkgray;
+        margin-left: 400px;
+        margin-right: 400px;
+        margin-bottom: 50px;
     }
 
     .container-fluid {
@@ -189,50 +254,102 @@
         padding-bottom: 70px;
     }
 
-    #contact {
-        color: white;
-        font-family: 'Acme';
-        padding-top: 100px;
-        padding-bottom: 60px
-    }
-
     .fa {
         padding: 5px;
-        font-size: 25px;
+        padding-top: 40px;
+        font-size: 30px;
         width: 70px;
         text-align: center;
         text-decoration: none;
         border-radius: 50%;
+        color: whitesmoke;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        -webkit-animation-iteration-count: 1;
     }
 
-    h4 {
-        font-size: 20px;
+    @keyframes bounce {
+
+        0%,
+        100%,
+        20%,
+        50%,
+        80% {
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0)
+        }
+
+        40% {
+            -webkit-transform: translateY(-30px);
+            -ms-transform: translateY(-30px);
+            transform: translateY(-30px)
+        }
+
+        60% {
+            -webkit-transform: translateY(-15px);
+            -ms-transform: translateY(-15px);
+            transform: translateY(-15px)
+        }
     }
 
-    .colp {
-        font-size: 15px;
-    }
-
-    #contact p {
-
-        font-size: 20px;
-        letter-spacing: 1.5px;
-    }
-    }
-
-    /* Add a hover effect if you want */
     .fa:hover {
-        opacity: 0.7;
         text-decoration: none;
+        opacity: 0.7;
+        animation-name: bounce;
+        -moz-animation-name: bounce;
     }
+
+
+    .fa-facebook-official:hover {
+        color: royalblue;
+    }
+
+    .fa-twitter-square:hover {
+        color: deepskyblue;
+    }
+
+    .fa-linkedin-square:hover {
+        color: dodgerblue;
+    }
+
+    .fa-github-square:hover {
+        color: whitesmoke;
+    }
+
+    .fa-instagram:hover {
+        color: deeppink;
+        /*#E1306C*/
+    }
+
+    .fa-whatsapp:hover {
+        color: lime;
+    }
+
 
     @media screen and (max-width: 1024px) {
+
+
+        .border-div {
+            display: none;
+        }
+
         .content {
             margin: auto;
         }
     }
 
     @media screen and (max-width: 600px) {
+
+        .content {
+            margin: auto;
+        }
+
         .bg-1 h1 {
             font-size: 2.3em;
         }
@@ -245,20 +362,41 @@
             width: 50%;
         }
 
-        .content {
-            margin: auto;
-        }
-
         .head1 {
             font-size: 30px;
+        }
+
+        .head2 {
+            font-size: 20px;
+        }
+
+        .head3 {
+            font-size: 17px;
+        }
+
+        #abtTxt {
+            padding-bottom: 14px;
         }
 
         .text1 {
             font-size: 14px;
             padding-bottom: 10px;
         }
-    }
 
+        .text2 {
+            font-size: 14px;
+        }
+
+        .border-div {
+            display: none;
+        }
+
+        .fa {
+            width: 50px;
+            font-size: 25px;
+        }
+
+    }
 </style>
 
 
@@ -280,7 +418,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#about">ABOUT</a></li>
                     <li><a href="#skills">SKILLS</a></li>
-                    <li><a href="#edu">EDUCATION</a></li>
+                    <li><a href="#exp">EXPERIENCE</a></li>
                     <li><a href="#proj">PROJECTS</a></li>
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
@@ -291,29 +429,39 @@
     <div class="jumbotron-fluid bg-1 text-center" id="intro">
         <header class="hidden">
             <img src="images/42710159.jpg" alt="Hi" class="hi">
-            <h1 class="hiddenA hi-txt">Hey! I am Gagan.</h1>
-            <p class="hiddenB">Backend Developer | Data Science Enthusiast<p>
-
+            <h1 class="hi-txt hiddenA">Hey! I am Gagan.</h1>
+            <p class="hiddenB">Backend Developer | Computer Science Enthusiast</p>
+            <form method="get" action="file/resume.pdf" class="down-form">
+                <button type="submit" class="btn btn-lg download-btn">Download Resume</button>
+            </form>
+            <div class="social-links">
+                <a class="fa fa-facebook-official" href="https://www.facebook.com/gagan.talreja.3" target="_blank"></a>
+                <a class="fa fa-twitter-square" href="https://twitter.com/gagan_talreja" target="_blank"></a>
+                <a class="fa fa-linkedin-square" href="https://in.linkedin.com/in/gagantalreja" target="_blank"></a>
+                <a class="fa fa-github-square" href="https://github.com/gagantalreja" target="_blank"></a>
+                <a class="fa fa-instagram" href="https://www.instagram.com/gagantalreja" target="_blank"></a>
+                <a class="fa fa-whatsapp" href="https://wa.me/919936988492?text=Hi%21%20I%20am%20contacting%20you%20from%20your%20website." target="_blank"></a>
+            </div>
         </header>
     </div>
     <br><br><br>
 
-    <div class="content" style="">
+    <div class="content">
         <!-- ABOUT -->
         <div class="container" id="about">
             <div class="head text-center">
-                <h1 class="head1">ABOUT ME
+                <h1 class="head1" id="abtHead">ABOUT ME
                     <hr>
                 </h1>
             </div>
             <div class="text text-center">
-                <p class="text1">Currently in 3<sup>rd</sup> year of pursuing B. Tech in Computer Science and Engineering.
-                    I have a good working experience in python. I have also worked with other languages like Java and PHP.
-                    Interested in fields of data science, social network analysis and data analytics.
-                    Enthusiastic about learning new technologies and frameworks. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ea, deserunt odit fugiat maiores, exercitationem, saepe repellendus eligendi nobis rerum ipsam accusantium at! Id voluptates, aperiam libero, ipsa beatae adipisci veniam possimus architecto molestias, dolores quas ab ad earum explicabo sunt vel! Aperiam temporibus vitae tempore, est quae, iusto ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi magni, inventore nulla beatae reprehenderit. Dolorem quo delectus ab velit non, minus voluptatum harum blanditiis minima natus ut enim incidunt cupiditate quod recusandae aliquid consequatur ipsa sequi atque quaerat. Officiis sint voluptate quo, hic maiores deleniti esse dolorum sequi atque in.
+                <p class="text1" id="abtTxt">
+                    I am a Computer Science enthusiast and currently pursuing a B.Tech in Computer Science &amp; Engineering from Bennett University, Greater Noida. I am very much interested and enthusiastic about learning more about different domains of Computer Science and like to learn about new frameworks and technologies. I have a good amount of experience in working with Python. I like to work in a professional environment where I can contribute and enrich my skills according to the latest technologies and work towards achieving the organizational goals.
                 </p>
+                <div class="border-div" style="margin-top: none;"></div>
             </div>
         </div>
+        <br>
         <!-- SKILLS -->
         <div class="container" id="skills">
             <div class="head text-center">
@@ -325,42 +473,113 @@
                 <p class="text1">These are the approximate proficiency values in percentage of some languages, tools and technologies that I have learnt and worked with. <br><small>(Not an exhaustive list)</small>
                 </p>
             </div>
-            <div class="skill-chart text-center">
+            <div class="skill-chart text-center aniview fast" data-av-animation="fadeIn">
                 <canvas id="canvas"></canvas>
+            </div>
+        </div>
+        <!--                EDUCATION AND EXPERIENCE-->
+        <div class="container" id="exp">
+            <div class="head text-center">
+                <h1 class="head1">EXPERIENCE
+                    <hr>
+                </h1>
+            </div>
+            <div class="text text-center">
+                <h2 class="head2 aniview" data-av-animation="slideInLeft">Data Analysis Intern at Radio Mirchi</h2>
+                <h3 class="head3 aniview" data-av-animation="slideInLeft">November, 2018 - January, 2019</h3>
+                <p class="text1 aniview" data-av-animation="slideInRight"><br>
+                    Worked in a team of 6 interns. Created a software to automate FCT and Song Analysis. Created a visualization tool that can display graphs and interactive tables to get proper insight into data. Created a interactive user interface.
+                </p>
+                <div class="border-div" style="margin-top: 20px;"></div>
+            </div>
+        </div>
+        <br><br>
+        <div class="container" id="proj">
+            <div class="head text-center">
+                <h1 class="head1">PROJECTS
+                    <hr>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 text text-center">
+                    <div class="aniview" data-av-animation="slideInLeft">
+                        <h2 class="head2">Tweet Inspector - Abuse Detection In Online Social Media</h2>
+                        <h3 class="head3">September, 2019 - November, 2019</h3>
+                        <p class="text2"><br>
+                            Semester Project at Bennett University. A tool that has been developed using machine learning classification algorithms and can be used to classify whether a tweet(written in Devanagari Script) is abusive or not.
+                        </p>
+                    </div>
+                    <a href="https://github.com/gagantalreja/tweet-inspector" target="_blank" class="btn btn-primary gitlink aniview" data-av-animation="bounce">View on GitHub</a>
+                    <div class="border-div"></div>
+                </div>
+                <div class="col-sm-6 text text-center">
+                    <div class="aniview" data-av-animation="slideInRight">
+                        <h2 class="head2">GeoStudy - Feature Extraction from Geospatial Imagery</h2>
+                        <h3 class="head3">March, 2019 - April, 2019</h3>
+                        <p class="text2"><br>
+                            Semester Project at Bennett University. The project aimed at creating a software to analyse geospatial data to identify natural features like vegetation and water in a particular region.
+                        </p>
+                    </div>
+                    <a href="https://github.com/gagantalreja/geoStudy" target="_blank" class="btn btn-primary gitlink aniview" data-av-animation="bounce">View on GitHub</a>
+                    <div class="border-div"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 text text-center left">
+                    <div class="aniview" data-av-animation="slideInLeft">
+                        <h2 class="head2">Placement Automation System</h2>
+                        <h3 class="head3">September, 2018 - November, 2018</h3>
+                        <p class="text2"><br>
+                            Semester Project at Bennett University. The project aimed at creating a website for automating the placement process at our university.
+                        </p>
+                    </div>
+                    <!--                                <a href="#" class="btn btn-primary gitlink">View on GitHub</a>-->
+                    <div class="border-div" style="margin-top: 20px;"></div>
+                </div>
+                <div class="col-sm-6 text text-center">
+                    <div class="aniview" data-av-animation="slideInRight">
+                        <h2 class="head2">Steganography Tool</h2>
+                        <h3 class="head3">October, 2018 - November, 2019</h3>
+                        <p class="text2"><br>
+                            Semester Project at Bennett University. The project aimed hiding random binary data into a greyscale image.
+                        </p>
+                    </div>
+
+                    <a href="https://github.com/gagantalreja/Steganography" target="_blank" class="btn btn-primary gitlink aniview" data-av-animation="bounce">View on GitHub</a>
+                    <div class="border-div"></div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="container" id="contact">
+            <div class="head text-center">
+                <h1 class="head1">CONTACT ME
+                    <hr>
+                </h1>
             </div>
         </div>
     </div>
     <br><br><br>
-    <div class="container-fluid bg-4 text-center" id="contact">
-        <div class="row">
-            <div class="col-sm-6 text-center" id="contactcola">
-                <h4>Contact Me:</h4>
-                <p class="colp"><span class="glyphicon glyphicon-map-marker"></span>Greater Noida, India</p>
-                <p class="colp"><a class="glyphicon glyphicon-envelope" href="mailto:gt9256@bennett.edu.in" target="_blank" id="mail"></a>gt9256@bennett.edu.in</p>
-            </div>
-
-            <div class="col-sm-6 text-center" id="contactcolb">
-                <h4>Find me on Social Media:</h4>
-                <a class="fa fa-facebook-official" href="https://www.facebook.com/gagan.talreja.3" target="_blank"></a>
-                <a class="fa fa-twitter-square" href="https://twitter.com/gagan_talreja" target="_blank"></a>
-                <a class="fa fa-linkedin-square" href="https://in.linkedin.com/in/gagantalreja" target="_blank"></a>
-                <a class="fa fa-github-square" href="https://github.com/gagantalreja" target="_blank"></a>
-                <a class="fa fa-instagram" href="https://www.instagram.com/gagantalreja" target="_blank"></a>
-            </div>
-        </div>
-    </div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/jquery-aniview@1.0.2/dist/jquery.aniview.min.js"></script>
+<script>
+    var options = {
+        animateThreshold: 100,
+        scrollPollInterval: 20
+    }
+    $('.aniview').AniView(options);
+</script>
 <script>
     var ctx = document.getElementById("canvas");
     console.log(window.screen.width);
-    var lab = ["Python", "Java", "MySQL", "DSA", "Web Dev.", "Flask", "Big Data"];
-    var labVals = [95, 80, 85, 70, 75, 70, 65];
+    var lab = ["Python", "Java", "MySQL", "DSA", "Web Dev.", "Flask"];
+    var labVals = [95, 80, 85, 70, 75, 70];
     var backColor = ['rgba(54, 162, 235, 0.2)',
         'rgba(255, 206, 86, 0.2)',
         'rgba(75, 192, 192, 0.2)',
@@ -401,23 +620,44 @@
             }],
         },
         options: {
+//            tooltips: {
+//                showAllTooltips: true,
+//                enabled: true,
+//                displayColors: false,
+//                yPadding: 20,
+//                xPadding: 30,
+//                caretSize: 10,
+//                
+//                callbacks: {
+//                    label: function(tooltipItem, labVals) {
+//                        return tooltipItem.xLabel + "%";
+//                    },
+//                    // remove title
+//                    title: function(tooltipItem, labVals) {
+//                        return;
+//                    },
+//                },
+//            },
             responsive: true,
             legend: false,
             scales: {
                 xAxes: [{
                     gridLines: false,
                     ticks: {
+                        mirror: true,
                         beginAtZero: true,
                         padding: 10,
-                        fontSize: (window.screen.width / 100) + 5,
+//                        fontSize: (window.screen.width / 100),
                         fontFamily: "'Fira Sans', sans-serif"
                     }
                 }],
                 yAxes: [{
+                    barPercentage: 0.4,
+                    gridLines: false,
                     ticks: {
                         beginAtZero: true,
                         padding: 10,
-                        fontSize: (window.screen.width / 100) + 5,
+//                        fontSize: (window.screen.width / 100),
                         fontFamily: "'Fira Sans', sans-serif"
                     },
 
@@ -425,7 +665,6 @@
             }
         }
     });
-
 </script>
 
 <script>
@@ -459,12 +698,9 @@
             $('.navbar-collapse').collapse('hide');
         });
 
-        $('header').fadeIn(4000).removeClass('hidden');
+        $('.hidden').fadeIn(4000).removeClass('hidden');
         $('h1').fadeIn(4000).removeClass('hiddenA');
         $('p').fadeIn(4000).removeClass('hiddenB');
-        $('.scroll-downs').fadeIn(4000).removeClass('hidden');
+        //        $('.scroll-downs').fadeIn(4000).removeClass('hidden');
     });
-
-</script>
-
-</html>
+</script></html>
