@@ -18,8 +18,9 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css">
     <script>
-        alert("This site is still under development.");
+        //alert("This site is still under development.");
     </script>
     <!--    <script src="main.js"></script>  -->
 </head>
@@ -108,13 +109,29 @@
         width: 15%;
         border: 2px solid blue;
         border-radius: 50%;
-        -webkit-transition: -webkit-transform .8s ease-in-out;
-        transition: transform .8s ease-in-out;
+
+        -webkit-animation: mover 1.5s infinite alternate;
+        animation: mover 1.5s infinite alternate;
     }
 
-    .hi:hover {
-        -webkit-transform: rotateY(360deg);
-        transform: rotateY(360deg);
+    @-webkit-keyframes mover {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-5px);
+        }
+    }
+
+    @keyframes mover {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-5px);
+        }
     }
 
     .hi-txt {
@@ -331,6 +348,37 @@
         color: lime;
     }
 
+    .contact-form {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .submit-btn {
+        background: transparent;
+        border: 1.5px solid black;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        color: black;
+    }
+
+    .submit-btn:hover {
+        background: black;
+        border-color: black;
+        color: white;
+    }
+
+    .form-group {
+        font-size: 17px;
+    }
+
+    input,
+    textarea {
+        font-weight: 400;
+    }
+
+    #proj row {
+        padding-top: 40px;
+    }
 
     @media screen and (max-width: 1024px) {
 
@@ -396,6 +444,9 @@
             font-size: 25px;
         }
 
+        .submit-btn {
+            width: 92vw;
+        }
     }
 </style>
 
@@ -446,7 +497,7 @@
     </div>
     <br><br><br>
 
-    <div class="content">
+    <div class="content" id="content">
         <!-- ABOUT -->
         <div class="container" id="about">
             <div class="head text-center">
@@ -526,7 +577,7 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-6 text text-center left">
+                <div class="col-sm-6 text text-center">
                     <div class="aniview" data-av-animation="slideInLeft">
                         <h2 class="head2">Placement Automation System</h2>
                         <h3 class="head3">September, 2018 - November, 2018</h3>
@@ -551,16 +602,41 @@
                 </div>
             </div>
         </div>
-        <br><br><br>
+        <br><br>
         <div class="container" id="contact">
             <div class="head text-center">
                 <h1 class="head1">CONTACT ME
                     <hr>
                 </h1>
             </div>
+            <div class="contact-form row">
+                <div class="col-sm-6">
+                    <form onsubmit="return postToGoogle(event);" id="cForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" class="form-control form-control-lg" id="name" placeholder="Enter your full name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control form-control-lg" id="email" placeholder="Enter a valid email address" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="msg">Your Message</label>
+                            <textarea class="form-control" id="msg" rows="5" placeholder="Type Your Message Here..." name="msg" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-primary submit-btn text-center">SEND MESSAGE</button>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <div id="map" style="height: 100%;"></div>
+                </div>
+            </div>
+            <br><br><br><br><br>
+            <br><br><br>
         </div>
     </div>
-    <br><br><br>
+
+    <br><br>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -568,12 +644,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-aniview@1.0.2/dist/jquery.aniview.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js.map"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
 <script>
     var options = {
         animateThreshold: 100,
         scrollPollInterval: 20
     }
-    $('.aniview').AniView(options);
+    if (window.screen.width > 600)
+        $('.aniview').AniView(options);
 </script>
 <script>
     var ctx = document.getElementById("canvas");
@@ -607,6 +686,7 @@
     ];
     // var type = 'bar';
     var type = 'horizontalBar';
+    var ws = 20;
     var myChart = new Chart(ctx, {
         type: type,
         data: {
@@ -620,24 +700,24 @@
             }],
         },
         options: {
-//            tooltips: {
-//                showAllTooltips: true,
-//                enabled: true,
-//                displayColors: false,
-//                yPadding: 20,
-//                xPadding: 30,
-//                caretSize: 10,
-//                
-//                callbacks: {
-//                    label: function(tooltipItem, labVals) {
-//                        return tooltipItem.xLabel + "%";
-//                    },
-//                    // remove title
-//                    title: function(tooltipItem, labVals) {
-//                        return;
-//                    },
-//                },
-//            },
+            //            tooltips: {
+            //                showAllTooltips: true,
+            //                enabled: true,
+            //                displayColors: false,
+            //                yPadding: 20,
+            //                xPadding: 30,
+            //                caretSize: 10,
+            //                
+            //                callbacks: {
+            //                    label: function(tooltipItem, labVals) {
+            //                        return tooltipItem.xLabel + "%";
+            //                    },
+            //                    // remove title
+            //                    title: function(tooltipItem, labVals) {
+            //                        return;
+            //                    },
+            //                },
+            //            },
             responsive: true,
             legend: false,
             scales: {
@@ -647,7 +727,7 @@
                         mirror: true,
                         beginAtZero: true,
                         padding: 10,
-//                        fontSize: (window.screen.width / 100),
+                        fontSize: window.screen.width / 100 + 5,
                         fontFamily: "'Fira Sans', sans-serif"
                     }
                 }],
@@ -657,7 +737,7 @@
                     ticks: {
                         beginAtZero: true,
                         padding: 10,
-//                        fontSize: (window.screen.width / 100),
+                        fontSize: window.screen.width / 100 + 5,
                         fontFamily: "'Fira Sans', sans-serif"
                     },
 
@@ -665,33 +745,27 @@
             }
         }
     });
+
+    //    $(window).resize(function() {
+    //        ws = $(window).width() / 100 + 5;
+    //        myChart.options.scales.xAxes[0].ticks.fontSize = ws;
+    //        myChart.options.scales.yAxes[0].ticks.fontSize = ws;
+    //    });
 </script>
 
 <script>
     $(document).ready(function() {
-        // Add smooth scrolling to all links in navbar + footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-
-            // Make sure this.hash has a value before overriding default behavior
+        $(".navbar a").on('click', function(event) {
             if (this.hash !== "") {
-
-                // Prevent default anchor click behavior
                 event.preventDefault();
-
-                // Store hash
                 var hash = this.hash;
-
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                console.log($(hash).offset().top);
+                var val = $(hash).offset().top;
                 $('html, body').animate({
-                    scrollTop: $(hash).offset().top
+                    scrollTop: val
                 }, 900, function() {
-
-                    // Add hash (#) to URL when done scrolling (default click behavior)
                     window.location.hash = hash;
                 });
-            } // End if
+            }
         });
 
         $('.navbar-nav>li>a').on('click', function() {
@@ -703,4 +777,111 @@
         $('p').fadeIn(4000).removeClass('hiddenB');
         //        $('.scroll-downs').fadeIn(4000).removeClass('hidden');
     });
+</script>
+
+<script>
+    function postToGoogle(e) {
+        e.preventDefault();
+        const name = "name";
+        const email = "email";
+        const msg = "msg";
+
+        var field1 = document.getElementById(name).value;
+        var field2 = document.getElementById(email).value;
+        var field3 = document.getElementById(msg).value;
+        console.log(field1 + " " + field2 + " " + field3);
+
+        if (field1 === "") {
+            alert('Please Fill Your Name');
+            document.getElementById(name).focus();
+            return false;
+        }
+        if (field2 === "") {
+            alert('Please Fill Your Email');
+            document.getElementById(email).focus();
+            return false;
+        }
+        if (field3 === "" || field3.length > 120) {
+            if (field3.length > 120) {
+                alert('It should be less than 120 words');
+            } else {
+                alert('Your message should not be blank.');
+            }
+            document.getElementById(msg).focus();
+            return false;
+        }
+
+        $.ajax({
+            url: "https://docs.google.com/forms/d/e/1FAIpQLSdgw8cin8lYiMzFUU-n1iYSGYy4KVjfFQdKKF9ItR74Kdwj3Q/formResponse?",
+            data: {
+                "entry.1450210933": field1,
+                "entry.1151854107": field2,
+                "entry.1545417973": field3
+            },
+            type: "POST",
+            dataType: "xml",
+            success: function(d) {
+                alert(d);
+            },
+            error: function(x, y, z) {
+                alert('Your message has been sent successfully.😉');
+                document.getElementById("cForm").reset();
+            }
+        });
+        return false;
+    }
+</script>
+<script>
+    // initialize the map
+    var map = L.map('map').setView([28.4500, 77.5843], 13);
+
+    // load a tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {//'http://{s}.tiles.mapc.org/basemap/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 17,
+        minZoom: 9
+    }).addTo(map);
+    
+    function addMarker(lat, lng) {
+        var code = "Bennett University";
+        var p = L.marker([lat, lng]);
+        p.title = code;
+        p.alt = code;
+        p.bindPopup(code);
+        p.addTo(map);
+        var c = L.circle([lat, lng], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 0
+        }).addTo(map);
+    }
+    
+    addMarker(28.4500, 77.5843);
+  
+    var mapmargin = 50;
+    $('#map').css("height", ($(window).height() - mapmargin));
+    $('#map').css('margin-left', 50);
+    $('#map').css("margin-top", 30);
+    
+    $(window).on("resize", resize);
+    resize();
+
+    function resize() {
+
+        if ($(window).width() > 1024) {
+            $('#map').css("height", ($(window).height() - 490));
+            
+        } else if($(window).width() <= 1024 && $(window).width() >= 769){
+            $('#map').css("height", ($(window).height() - 1100));
+
+        }else if($(window).width() <= 768 && $(window).width() > 600){
+            $('#map').css("height", ($(window).height() - 750)); 
+        }
+        else {
+            document.getElementById('map').style.display = "none";
+        }
+
+    }
+
 </script></html>
