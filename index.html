@@ -201,10 +201,10 @@
     }
 
     .text2 {
-        font-size: 17px;
+        font-size: 15px;
         line-height: 2em;
         font-family: 'Fira Sans', sans-serif;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
 
     #abtHead {
@@ -228,13 +228,13 @@
     .head2 {
         font-family: 'Montserrat', sans-serif;
         font-weight: 600;
-        font-size: 25px;
+        font-size: 23px;
     }
 
     .head3 {
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
-        font-size: 22px;
+        font-size: 21px;
     }
 
     .gitlink {
@@ -348,22 +348,22 @@
         color: lime;
     }
 
-    .contact-form {
+    .contact-form, .text3 {
         font-family: 'Montserrat', sans-serif;
     }
 
     .submit-btn {
-        background: transparent;
+        background: royalblue;
         border: 1.5px solid black;
         -webkit-transition-duration: 0.4s;
         /* Safari */
         transition-duration: 0.4s;
-        color: black;
+        color: white;
     }
 
     .submit-btn:hover {
-        background: black;
-        border-color: black;
+        background: transparent;
+        border-color: white;
         color: white;
     }
 
@@ -376,8 +376,18 @@
         font-weight: 400;
     }
 
-    #proj row {
+    #proj row1 {
         padding-top: 40px;
+    }
+
+    #contact {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    
+    .footer{
+        margin-left: 40px;
+        margin-right: 40px;
     }
 
     @media screen and (max-width: 1024px) {
@@ -422,6 +432,12 @@
             font-size: 17px;
         }
 
+        /*
+        .cont-head{
+            margin-left: 20px;
+        }
+*/
+
         #abtTxt {
             padding-bottom: 14px;
         }
@@ -440,12 +456,12 @@
         }
 
         .fa {
-            width: 50px;
-            font-size: 25px;
+            width: 40px;
+            font-size: 20px;
         }
 
         .submit-btn {
-            width: 92vw;
+            width: 100%;
         }
     }
 </style>
@@ -467,11 +483,11 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#skills">SKILLS</a></li>
-                    <li><a href="#exp">EXPERIENCE</a></li>
-                    <li><a href="#proj">PROJECTS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="#abtHead">ABOUT</a></li>
+                    <li><a href="#skillHead">SKILLS</a></li>
+                    <li><a href="#expHead">EXPERIENCE</a></li>
+                    <li><a href="#projHead">PROJECTS</a></li>
+                    <li><a href="#cons">CONTACT</a></li>
                 </ul>
             </div>
         </div>
@@ -491,11 +507,12 @@
                 <a class="fa fa-linkedin-square" href="https://in.linkedin.com/in/gagantalreja" target="_blank"></a>
                 <a class="fa fa-github-square" href="https://github.com/gagantalreja" target="_blank"></a>
                 <a class="fa fa-instagram" href="https://www.instagram.com/gagantalreja" target="_blank"></a>
+                <a class="fa fa-envelope" href="mailto: gtcms1@gmail.com" target="_blank"></a>
                 <a class="fa fa-whatsapp" href="https://wa.me/919936988492?text=Hi%21%20I%20am%20contacting%20you%20from%20your%20website." target="_blank"></a>
             </div>
         </header>
     </div>
-    <br><br><br>
+    <br><br>
 
     <div class="content" id="content">
         <!-- ABOUT -->
@@ -516,7 +533,7 @@
         <!-- SKILLS -->
         <div class="container" id="skills">
             <div class="head text-center">
-                <h1 class="head1">MY SKILLS
+                <h1 class="head1" id="skillHead">MY SKILLS
                     <hr>
                 </h1>
             </div>
@@ -531,27 +548,26 @@
         <!--                EDUCATION AND EXPERIENCE-->
         <div class="container" id="exp">
             <div class="head text-center">
-                <h1 class="head1">EXPERIENCE
+                <h1 class="head1" id="expHead">EXPERIENCE
                     <hr>
                 </h1>
             </div>
             <div class="text text-center">
                 <h2 class="head2 aniview" data-av-animation="slideInLeft">Data Analysis Intern at Radio Mirchi</h2>
-                <h3 class="head3 aniview" data-av-animation="slideInLeft">November, 2018 - January, 2019</h3>
+                <h3 class="head3 aniview" data-av-animation="slideInLeft">November, 2018 - March, 2019</h3>
                 <p class="text1 aniview" data-av-animation="slideInRight"><br>
                     Worked in a team of 6 interns. Created a software to automate FCT and Song Analysis. Created a visualization tool that can display graphs and interactive tables to get proper insight into data. Created a interactive user interface.
                 </p>
                 <div class="border-div" style="margin-top: 20px;"></div>
             </div>
         </div>
-        <br><br>
         <div class="container" id="proj">
             <div class="head text-center">
-                <h1 class="head1">PROJECTS
+                <h1 class="head1" id="projHead">PROJECTS
                     <hr>
                 </h1>
             </div>
-            <div class="row">
+            <div class="row row1">
                 <div class="col-sm-6 text text-center">
                     <div class="aniview" data-av-animation="slideInLeft">
                         <h2 class="head2">Tweet Inspector - Abuse Detection In Online Social Media</h2>
@@ -575,7 +591,6 @@
                     <div class="border-div"></div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-sm-6 text text-center">
                     <div class="aniview" data-av-animation="slideInLeft">
@@ -599,44 +614,46 @@
 
                     <a href="https://github.com/gagantalreja/Steganography" target="_blank" class="btn btn-primary gitlink aniview" data-av-animation="bounce">View on GitHub</a>
                     <div class="border-div"></div>
+                    <br><br>
+                    <div id="cons"></div>
                 </div>
             </div>
-        </div>
-        <br><br>
-        <div class="container" id="contact">
-            <div class="head text-center">
-                <h1 class="head1">CONTACT ME
-                    <hr>
-                </h1>
-            </div>
-            <div class="contact-form row">
-                <div class="col-sm-6">
-                    <form onsubmit="return postToGoogle(event);" id="cForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" class="form-control form-control-lg" id="name" placeholder="Enter your full name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" class="form-control form-control-lg" id="email" placeholder="Enter a valid email address" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="msg">Your Message</label>
-                            <textarea class="form-control" id="msg" rows="5" placeholder="Type Your Message Here..." name="msg" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-lg btn-primary submit-btn text-center">SEND MESSAGE</button>
-                    </form>
-                </div>
-                <div class="col-sm-6">
-                    <div id="map" style="height: 100%;"></div>
-                </div>
-            </div>
-            <br><br><br><br><br>
-            <br><br><br>
         </div>
     </div>
+    
+    <div class="container-fluid" id="contact">
+        <div class="contact-form row">
+            <div class="col-sm-6">
+                <h2 class="head2 cont-head" style="font-family: 'Montserrat' sans-serif; font-weight: 300; margin-bottom: 20px;" id="contHead">SEND ME A MESSAGE</h2>
+                <form onsubmit="return postToGoogle(event);" id="cForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control form-control-lg" id="name" placeholder="Enter your full name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control form-control-lg" id="email" placeholder="Enter a valid email address" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="msg">Your Message</label>
+                        <textarea class="form-control" id="msg" rows="5" placeholder="Type Your Message Here..." name="msg" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary submit-btn text-center">SEND MESSAGE</button>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <div class="head2" style="font-family: 'Montserrat' sans-serif; font-weight: 300; margin-bottom: 90px; margin-left: 50px;"></div>
+                <div id="map" style="height: 100%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="text3 row footer container-fluid">
+       <div class="col-sm-12 text-center">
+           <p>© 2019 Gagan Talreja</p>
+           <p>Made with &#9829; by <span><a href="https://github.com/gagantalreja" style="color: deepskyblue; text-decoration: none;">Gagan Talreja.</a></span></p>
+       </div>
+    </div>
 
-    <br><br>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -759,10 +776,11 @@
             if (this.hash !== "") {
                 event.preventDefault();
                 var hash = this.hash;
+                var ht = $(".navbar-fixed-top").height() - 50;
                 var val = $(hash).offset().top;
-                $('html, body').animate({
+                $('html, body').unbind().animate({
                     scrollTop: val
-                }, 900, function() {
+                }, 500, function() {
                     window.location.hash = hash;
                 });
             }
@@ -833,15 +851,15 @@
 </script>
 <script>
     // initialize the map
-    var map = L.map('map').setView([28.4500, 77.5843], 13);
+    var map = L.map('map').setView([28.45, 77.58], 1);
 
     // load a tile layer
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {//'http://{s}.tiles.mapc.org/basemap/{z}/{x}/{y}.png', {
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { //'http://{s}.tiles.mapc.org/basemap/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         maxZoom: 17,
         minZoom: 9
     }).addTo(map);
-    
+
     function addMarker(lat, lng) {
         var code = "Bennett University";
         var p = L.marker([lat, lng]);
@@ -856,32 +874,30 @@
             radius: 0
         }).addTo(map);
     }
-    
-    addMarker(28.4500, 77.5843);
-  
+
+    addMarker(28.45, 77.58);
+
     var mapmargin = 50;
     $('#map').css("height", ($(window).height() - mapmargin));
-    $('#map').css('margin-left', 50);
-    $('#map').css("margin-top", 30);
-    
+    $('#map').css('margin-left', 40);
+    $('#map').css("margin-top", 36);
+
     $(window).on("resize", resize);
     resize();
 
     function resize() {
 
         if ($(window).width() > 1024) {
-            $('#map').css("height", ($(window).height() - 490));
-            
-        } else if($(window).width() <= 1024 && $(window).width() >= 769){
+            $('#map').css("height", ($(window).height() - 470));
+
+        } else if ($(window).width() <= 1024 && $(window).width() >= 769) {
             $('#map').css("height", ($(window).height() - 1100));
 
-        }else if($(window).width() <= 768 && $(window).width() > 600){
-            $('#map').css("height", ($(window).height() - 750)); 
-        }
-        else {
+        } else if ($(window).width() <= 768 && $(window).width() > 600) {
+            $('#map').css("height", ($(window).height() - 750));
+        } else {
             document.getElementById('map').style.display = "none";
         }
 
     }
-
 </script></html>
