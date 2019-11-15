@@ -349,7 +349,8 @@
         color: lime;
     }
 
-    .contact-form, .text3 {
+    .contact-form,
+    .text3 {
         font-family: 'Montserrat', sans-serif;
     }
 
@@ -377,16 +378,61 @@
         font-weight: 400;
     }
 
-    #proj row1 {
+    #proj .row1 {
         padding-top: 40px;
+    }
+
+    #articles {
+        padding-top: 40px;
+    }
+
+    .row2 {
+        margin-bottom: 60px;
+        margin-left: 0px;
+        padding-top: 40px;
+    }
+
+    .pop-up {
+        margin-top: 40px;
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 32%;
+        margin-left: 15px;
+        padding-bottom: 20px;
+        height: 32%;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+    }
+
+    .pop-up:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .artlink {
+        background: transparent;
+        color: royalblue;
+        font-family: 'Montserrat', sans-serif;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+    }
+
+    .artlink:hover {
+        background: black;
+        color: white;
+        border-color: black;
+        /*
+         -webkit-transition-duration: 0.4s;  Safari 
+        transition-duration: 0.4s;
+*/
     }
 
     #contact {
         margin-left: 40px;
         margin-right: 40px;
     }
-    
-    .footer{
+
+    .footer {
         margin-left: 40px;
         margin-right: 40px;
     }
@@ -400,6 +446,11 @@
 
         .content {
             margin: auto;
+        }
+
+        .pop-up {
+            width: 30%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
     }
 
@@ -464,16 +515,26 @@
         .submit-btn {
             width: 100%;
         }
+
+        .pop-up {
+            width: 86%;
+            height: auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .pop-up:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
     }
 </style>
 
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="6">
-
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -484,10 +545,11 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#abtHead">ABOUT</a></li>
-                    <li><a href="#skillHead">SKILLS</a></li>
-                    <li><a href="#expHead">EXPERIENCE</a></li>
-                    <li><a href="#projHead">PROJECTS</a></li>
+                    <li><a href="#abt">ABOUT</a></li>
+                    <li><a href="#skill">SKILLS</a></li>
+                    <li><a href="#experience">WORK</a></li>
+                    <li><a href="#project">PROJECTS</a></li>
+                    <li><a href="#article">ARTICLES</a></li>
                     <li><a href="#cons">CONTACT</a></li>
                 </ul>
             </div>
@@ -512,6 +574,7 @@
                 <a class="fa fa-whatsapp" href="https://wa.me/919936988492?text=Hi%21%20I%20am%20contacting%20you%20from%20your%20website." target="_blank"></a>
             </div>
         </header>
+        <div id="abt"></div>
     </div>
     <br><br>
 
@@ -528,6 +591,7 @@
                     I am a Computer Science enthusiast and currently pursuing a B.Tech in Computer Science &amp; Engineering from Bennett University, Greater Noida. I am very much interested and enthusiastic about learning more about different domains of Computer Science and like to learn about new frameworks and technologies. I have a good amount of experience in working with Python. I like to work in a professional environment where I can contribute and enrich my skills according to the latest technologies and work towards achieving the organizational goals.
                 </p>
                 <div class="border-div" style="margin-top: none;"></div>
+                <div id="skill"></div><br>
             </div>
         </div>
         <br>
@@ -542,9 +606,11 @@
                 <p class="text1">These are the approximate proficiency values in percentage of some languages, tools and technologies that I have learnt and worked with. <br><small>(Not an exhaustive list)</small>
                 </p>
             </div>
+
             <div class="skill-chart text-center aniview fast" data-av-animation="fadeIn">
                 <canvas id="canvas"></canvas>
             </div>
+            <div id="experience"></div><br><br>
         </div>
         <!--                EDUCATION AND EXPERIENCE-->
         <div class="container" id="exp">
@@ -559,6 +625,7 @@
                 <p class="text1 aniview" data-av-animation="slideInRight"><br>
                     Worked in a team of 6 interns. Created a software to automate FCT and Song Analysis. Created a visualization tool that can display graphs and interactive tables to get proper insight into data. Created a interactive user interface.
                 </p>
+                <div id="project"></div>
                 <div class="border-div" style="margin-top: 20px;"></div>
             </div>
         </div>
@@ -568,7 +635,7 @@
                     <hr>
                 </h1>
             </div>
-            <div class="row row1">
+            <div class="row row1" style="margin-bottom: 50px;">
                 <div class="col-sm-6 text text-center">
                     <div class="aniview" data-av-animation="slideInLeft">
                         <h2 class="head2">Tweet Inspector - Abuse Detection In Online Social Media</h2>
@@ -578,7 +645,7 @@
                         </p>
                     </div>
                     <a href="https://github.com/gagantalreja/tweet-inspector" target="_blank" class="btn btn-primary gitlink aniview" data-av-animation="bounce">View on GitHub</a>
-                    <div class="border-div"></div>
+                    <!--                    <div class="border-div"></div>-->
                 </div>
                 <div class="col-sm-6 text text-center">
                     <div class="aniview" data-av-animation="slideInRight">
@@ -589,7 +656,6 @@
                         </p>
                     </div>
                     <a href="https://github.com/gagantalreja/geoStudy" target="_blank" class="btn btn-primary gitlink aniview" data-av-animation="bounce">View on GitHub</a>
-                    <div class="border-div"></div>
                 </div>
             </div>
             <div class="row">
@@ -602,7 +668,6 @@
                         </p>
                     </div>
                     <!--                                <a href="#" class="btn btn-primary gitlink">View on GitHub</a>-->
-                    <div class="border-div" style="margin-top: 20px;"></div>
                 </div>
                 <div class="col-sm-6 text text-center">
                     <div class="aniview" data-av-animation="slideInRight">
@@ -614,14 +679,49 @@
                     </div>
 
                     <a href="https://github.com/gagantalreja/Steganography" target="_blank" class="btn btn-primary gitlink aniview" data-av-animation="bounce">View on GitHub</a>
-                    <div class="border-div"></div>
-                    <br><br>
-                    <div id="cons"></div>
+                    <div id="article"></div>
                 </div>
+            </div><br>
+            <!--            <div class="border-div" style="margin-top: 80px;"></div>-->
+        </div>
+        <div class="container" id="articles">
+            <div class="head text-center">
+                <h1 class="head1" id="projHead">ARTICLES PUBLISHED
+                    <hr>
+                </h1>
             </div>
+            <div class="row row2">
+                <div class="col-sm-4 pop-up text text-center">
+                    <h2 class="head2">Twitter Bot Identification</h2>
+                    <h3 class="head3">Sep 29, 2019 &#8226; Medium</h3>
+                    <p class="text2"><br>
+                        Through this article I have tried to show how various classification algorithms can be used to identify whether a twitter account is a bot or not.
+                    </p>
+                    <a href="https://medium.com/@gtcms1/twitter-bot-identification-61f2976e4a7e" target="_blank" class="btn btn-primary artlink aniview" data-av-animation="bounce">Read Article</a>
+                </div>
+                <div class="col-sm-4 pop-up text text-center">
+                    <h2 class="head2">Word Prediction</h2>
+                    <h3 class="head3">Jun 18, 2018 &#8226; GeeksForGeeks</h3>
+                    <p class="text2"><br>
+                        The article describes a naive method of word prediction using basic concepts of N-grams and CDF.
+                    </p>
+                    <a href="https://www.geeksforgeeks.org/word-prediction-using-concepts-of-n-grams-and-cdf/" target="_blank" class="btn btn-primary artlink aniview" data-av-animation="bounce">Read Article</a>
+                </div>
+
+                <div class="col-sm-4 pop-up text text-center">
+                    <h2 class="head2">Bootstrap 4 &#124; Collapse</h2>
+                    <h3 class="head3">May 23, 2018 &#8226; GeeksForGeeks</h3>
+                    <p class="text2"><br>
+                        The article is a tutorial on how to use .collapse class in Bootstrap 4 using pictorial and code examples.
+                    </p>
+                    <a href="https://www.geeksforgeeks.org/bootstrap-4-collapse/" target="_blank" class="btn btn-primary artlink aniview" data-av-animation="bounce">Read Article</a>
+                </div>
+                <!--                <div class="border-div"></div>-->
+            </div>
+            <div id="cons"></div>
         </div>
     </div>
-    
+
     <div class="container-fluid" id="contact">
         <div class="contact-form row">
             <div class="col-sm-6">
@@ -649,10 +749,10 @@
         </div>
     </div>
     <div class="text3 row footer container-fluid">
-       <div class="col-sm-12 text-center">
-           <p>© 2019 Gagan Talreja</p>
-           <p>Made with &#9829; by <span><a href="https://github.com/gagantalreja" style="color: deepskyblue; text-decoration: none;">Gagan Talreja.</a></span></p>
-       </div>
+        <div class="col-sm-12 text-center">
+            <p>© 2019 Gagan Talreja</p>
+            <p>Made with &#9829; by <span><a href="https://github.com/gagantalreja" style="color: deepskyblue; text-decoration: none;">Gagan Talreja.</a></span></p>
+        </div>
     </div>
 </body>
 
