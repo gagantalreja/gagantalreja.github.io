@@ -1,130 +1,412 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <title>Gagan Talreja | Coming Soon</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="images/g.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/png" href="./img/g.png">
+    <title>Gagan Talreja</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Gagan Talreja Personal Webiste" />
+    <meta name="google-site-verification" content="sh1M-gvRkbpXonpxN0lgdeSyq4K_SSHn_GL07XRikD8" />
+    <meta name="keywords" content="gagan,talreja, gagan talreja, resume, website, cv, bennett" />
+    <meta name="author" content="gagan talreja" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" type="text/css">
+    <link rel="stylesheet" href="css/animations.css" type="text/css">
+    <link rel="stylesheet" href="css/perfect-scrollbar.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+
+    <script src="js/modernizr.custom.js"></script>
 </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150949917-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-150949917-1');
+</script>
+
 <style>
-    #coming {
-        color: white;
-        padding-top: 15%;
-    }
 
-    #coming h1 {
-        /*        padding-left: 35%;*/
-        font-size: 300%;
-    }
-
-    #coming .find {
-        /*        padding-left: 28%;*/
-
-    }
-
-    .head {
-        font-size: 200%;
-    }
-
-    body {
-        background-color: black;
-        font-family: 'Acme';
-    }
-
-    .fa {
-        padding: 2px;
-        font-size: 200%;
-        width: 50px;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 50%;
-    }
-
-    .fa:hover {
-        opacity: 0.7;
-        text-decoration: none;
-    }
-
-    h1 {
-        -webkit-animation: mover 1.5s infinite alternate;
-        animation: mover 1.5s infinite alternate;
-    }
-
-    @-webkit-keyframes mover {
-        0% {
-            transform: translateY(0);
-        }
-
-        100% {
-            transform: translateY(-10px);
-        }
-    }
-
-    @keyframes mover {
-        0% {
-            transform: translateY(0);
-        }
-
-        100% {
-            transform: translateY(-10px);
-        }
-    }
-
-    @media screen and (max-width: 600px) {
-        #coming h1 {
-            display: block;
-            font-size: 2em;
-            margin-top: 0.67em;
-            /*            margin-bottom: 0.67em;*/
-            margin-left: 0px;
-            margin-right: 0.1em;
-        }
-
-        .head {
-            font-size: 2em;
-        }
-
-        .fa {
-            font-size: 2em;
-            width: 2em;
-        }
-    }
-
+   
+    
 </style>
 
 <body>
+    <!-- Animated Background -->
+    <div class="lm-animated-bg" style="background-image: url(img/main_bg.png);"></div>
+    <!-- /Animated Background -->
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#" id="home">Gagan Talreja</a>
+    <!-- Loading animation -->
+    <div class="preloader">
+        <div class="preloader-animation">
+            <div class="preloader-spinner">
             </div>
         </div>
-    </nav>
+    </div>
+    <!-- /Loading animation -->
 
-    <div class="container text-center" id="coming">
-        <h1>COMING SOON!</h1><br><br>
-        <div class="find">
-            <p>
-                <span class="head">Find me on Social Media: </span>
-                <a class="fa fa-facebook-official" href="https://www.facebook.com/gagan.talreja.3" target="_blank"></a>
-                <a class="fa fa-twitter-square" href="https://twitter.com/gagan_talreja" target="_blank"></a>
-                <a class="fa fa-linkedin-square" href="https://in.linkedin.com/in/gagantalreja" target="_blank"></a>
-                <a class="fa fa-github-square" href="https://github.com/gagantalreja" target="_blank"></a>
-                <a class="fa fa-instagram" href="https://www.instagram.com/gagantalreja/" target="_blank"></a>
-            </p>
+    <div class="page">
+        <div class="page-content">
+
+            <header id="site_header" class="header mobile-menu-hide">
+                <div class="header-content">
+                    <div class="header-photo">
+                        <img src="./img/gagan.jfif" alt="Alex Smith">
+                    </div>
+                    <div class="header-titles">
+                        <h2>Gagan Talreja</h2>
+                        <h4>Full Stack Developer</h4>
+                    </div>
+                </div>
+
+                <ul class="main-menu">
+                    <li class="active">
+                        <a href="#home" class="nav-anim">
+                            <span class="menu-icon lnr lnr-home"></span>
+                            <span class="link-text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#resume" class="nav-anim">
+                            <span class="menu-icon lnr lnr-graduation-hat"></span>
+                            <span class="link-text">Resume</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" class="nav-anim">
+                            <span class="menu-icon lnr lnr-laptop"></span>
+                            <span class="link-text">Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="nav-anim">
+                            <span class="menu-icon lnr lnr-envelope"></span>
+                            <span class="link-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="social-links">
+                    <ul>
+                        <li><a href="https://www.facebook.com/gagan.talreja.3" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/gagantalreja" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="https://www.twitter.com/gagan_talreja" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/gagantalreja" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.github.com/gagantalreja" target="_blank"><i class="fab fa-github"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="header-buttons">
+                    <a href="./file/resume.pdf" target="_blank" class="btn btn-primary">Download CV</a>
+                </div>
+
+                <div class="copyrights">© 2020 All rights reserved.</div>
+            </header>
+
+            <!-- Mobile Navigation -->
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- End Mobile Navigation -->
+
+            <!-- Arrows Nav -->
+            <div class="lmpixels-arrows-nav">
+                <div class="lmpixels-arrow-right"><i class="lnr lnr-chevron-right"></i></div>
+                <div class="lmpixels-arrow-left"><i class="lnr lnr-chevron-left"></i></div>
+            </div>
+            <!-- End Arrows Nav -->
+
+            <div class="content-area">
+                <div class="animated-sections">
+                    <!-- Home Subpage -->
+                    <section data-id="home" class="animated-section start-page">
+                        <div class="section-content vcentered">
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <div class="page-title">
+                                        <h2>About <span>Me</span></h2>
+                                    </div>
+                                    <div>
+                                        <p>I am a final year B.Tech Computer Science student at Bennett University. I have always been interested in computers. Learning about new technology, new development techniques has always been my hobby. I have always had a knack for programming since my school days. Probably, that is why I decided to pursue computer science as the field I want to build my career into.</p>
+                                        <p>
+                                            During my semesters in college, I learnt to work with various tools and technologies like AWS, GCP, Google Firebase, Docker and Hadoop. I can write code in languages like Python, Java, Javascript, PHP. I am interested in fields like data analytics and social network analysis and also enthusiastic about learning new skills and technologies.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End of Home Subpage -->
+
+                    <!-- Resume Subpage -->
+                    <section data-id="resume" class="animated-section">
+                        <div class="page-title">
+                            <h2>Resume</h2>
+                        </div>
+
+                        <div class="section-content">
+
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-11">
+
+                                    <!-- Knowledges -->
+                                    <div class="block-title">
+                                        <h3>Known Tools &amp; Languages</h3>
+                                    </div>
+
+                                    <ul class="knowledges">
+                                        <li>Python</li>
+                                        <li>JavaScript</li>
+                                        <li>Java</li>
+                                        <li>Dart</li>
+                                        <li>Flask</li>
+                                        <li>NodeJS</li>
+                                        <li>Flutter</li>
+                                        <li>HTML/CSS</li>
+                                        <li>SQL</li>
+                                        <li>MongoDB</li>
+                                        <li>Git/GitHub</li>
+                                        <li>JIRA</li>
+                                    </ul>
+                                    <!-- End of Knowledges -->
+                                    <div class="white-space-40"></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12">
+                                    <div class="block-title">
+                                        <h3>Education</h3>
+                                    </div>
+
+                                    <div class="timeline timeline-second-style clearfix">
+                                        <div class="timeline-item clearfix">
+                                            <div class="left-part">
+                                                <h5 class="item-period">2017-Present</h5>
+                                                <span class="item-company">Bennett University</span>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="right-part">
+                                                <h4 class="item-title">B.Tech. Computer Science &amp; Engineering</h4>
+                                                <p>Current CGPA - 9.35</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline-item clearfix">
+                                            <div class="left-part">
+                                                <h5 class="item-period">2014-2016</h5>
+                                                <span class="item-company">City Montessori School</span>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="right-part">
+                                                <h4 class="item-title">Class - XII<sup>th</sup> (ISC Board)</h4>
+                                                <p>Percentage - 96%</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline-item clearfix">
+                                            <div class="left-part">
+                                                <h5 class="item-period">2012-2014</h5>
+                                                <span class="item-company">City Montessori School</span>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="right-part">
+                                                <h4 class="item-title">Class - X<sup>th</sup> (ICSE Board)</h4>
+                                                <p>Percentage - 92%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="white-space-30"></div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="block-title">
+                                        <h3>Experience</h3>
+                                    </div>
+
+                                    <div class="timeline timeline-second-style clearfix">
+                                        <div class="timeline-item clearfix">
+                                            <div class="left-part">
+                                                <h5 class="item-period">Feb 2020 - Present</h5>
+                                                <span class="item-company">Youngun India</span>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="right-part">
+                                                <h4 class="item-title">Website Developer</h4>
+                                                <p>Developed a dashboard that will be used by the admin to assign social media platforms to the content provided by their clients. AWS S3 was used to store images and MongoDB was used as the primary database. The frontend was created using HTML, CSS, JS and Bootstrap and the backend was developed in Flask.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline-item clearfix">
+                                            <div class="left-part">
+                                                <h5 class="item-period">May 2020 - July 2020</h5>
+                                                <span class="item-company">MindHug</span>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="right-part">
+                                                <h4 class="item-title">Technology Intern</h4>
+                                                <p>Developed a platform that can help people get knowledge and help with mental health issues. The platform was built on Flask. PostgreSQL was used as the primary database. The platform is deployed on the Google Cloud Platform.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="timeline-item clearfix">
+                                            <div class="left-part">
+                                                <h5 class="item-period">Nov 2018 - Mar 2019</h5>
+                                                <span class="item-company">Radio Mirchi</span>
+                                            </div>
+                                            <div class="divider"></div>
+                                            <div class="right-part">
+                                                <h4 class="item-title">Data Analysis Intern</h4>
+                                                <p>During this internship, me and my team were successfully able to create a visualization tool for FCT Analysis and Song Analysis. The tool was a desktop application created in Python.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End of Resume Subpage -->
+
+                    <!-- Portfolio Subpage -->
+                    <section data-id="portfolio" class="animated-section">
+                        <div class="page-title">
+                            <h2>Recent <span>Projects</span></h2>
+                        </div>
+
+                        <div class="section-content">
+
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12">
+                                    <!-- Portfolio Content -->
+                                    <div class="portfolio-content proj">
+                                        
+                                    </div>
+                                    <!-- End of Portfolio Content -->
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End of Portfolio Subpage -->
+
+                    <!-- Contact Subpage -->
+                    <section data-id="contact" class="animated-section">
+                        <div class="page-title">
+                            <h2>Contact</h2>
+                        </div>
+
+                        <div class="section-content">
+
+                            <div class="row">
+                                <!-- Contact Info -->
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="lm-info-block gray-default">
+                                        <i class="lnr lnr-map-marker"></i>
+                                        <h4>Lucknow, India</h4>
+                                        <span class="lm-info-block-value"></span>
+                                        <span class="lm-info-block-text"></span>
+                                    </div>
+
+                                    <div class="lm-info-block gray-default">
+                                        <i class="lnr lnr-phone-handset"></i>
+                                        <h4>993-698-8492</h4>
+                                        <span class="lm-info-block-value"></span>
+                                        <span class="lm-info-block-text"></span>
+                                    </div>
+
+                                    <div class="lm-info-block gray-default">
+                                        <i class="lnr lnr-envelope"></i>
+                                        <h4><a href="mailto:gtcms1@gmail.com" class="__cf_email__">gtcms1@gmail.com</a></h4>
+                                        <span class="lm-info-block-value"></span>
+                                        <span class="lm-info-block-text"></span>
+                                    </div>
+
+                                </div>
+                                <!-- End of Contact Info -->
+
+                                <!-- Contact Form -->
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="block-title">
+                                        <h3>How Can I <span>Help You?</span></h3>
+                                    </div>
+
+                                    <form id="contact_form" class="contact-form" onsubmit="return postToGoogle(event);" method="post">
+
+                                        <div class="messages"></div>
+
+                                        <div class="controls two-columns">
+                                            <div class="fields clearfix">
+                                                <div class="left-column">
+                                                    <div class="form-group form-group-with-icon">
+                                                        <input id="name" type="text" name="name" class="form-control" placeholder="" required="required" data-error="Name is required.">
+                                                        <label>Full Name</label>
+                                                        <div class="form-control-border"></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+
+                                                    <div class="form-group form-group-with-icon">
+                                                        <input id="email" type="email" name="email" class="form-control" placeholder="" required="required" data-error="Valid email is required.">
+                                                        <label>Email Address</label>
+                                                        <div class="form-control-border"></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+
+                                                    <div class="form-group form-group-with-icon">
+                                                        <input id="sub" type="text" name="sub" class="form-control" placeholder="" required="required" data-error="Subject is required.">
+                                                        <label>Subject</label>
+                                                        <div class="form-control-border"></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="right-column">
+                                                    <div class="form-group form-group-with-icon">
+                                                        <textarea id="msg" name="msg" class="form-control" placeholder="" rows="7" required="required" data-error="Please, leave me a message."></textarea>
+                                                        <label>Message</label>
+                                                        <div class="form-control-border"></div>
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="submit" class="button btn-send" value="Send message" style="cursor: pointer">
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- End of Contact Form -->
+                            </div>
+
+                        </div>
+                    </section>
+                    <!-- End of Contact Subpage -->
+                </div>
+            </div>
+
         </div>
     </div>
 
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/animating.js"></script>
+
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src='js/perfect-scrollbar.min.js'></script>
+    <script src='js/jquery.shuffle.min.js'></script>
+    <script src='js/masonry.pkgd.min.js'></script>
+    <script src='js/owl.carousel.min.js'></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+
+    <script src="js/validator.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- Mirrored from lmpixels.com/demo/breezycv/dark/6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Dec 2020 12:24:23 GMT -->
 
 </html>
+
