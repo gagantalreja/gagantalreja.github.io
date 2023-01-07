@@ -606,7 +606,7 @@ section .container {
 }
 
 .testimonials .testimonial-item {
-  box-sizing: content-box;
+  /* box-sizing: content-box; */
   min-height: 320px;
 }
 
