@@ -11,781 +11,250 @@
     <meta name="description" content="Gagan Talreja Personal Webiste" />
     <meta name="google-site-verification" content="sh1M-gvRkbpXonpxN0lgdeSyq4K_SSHn_GL07XRikD8" />
     <meta name="keywords"
-        content="gagan,talreja, gagan talreja, resume, website, cv, bennett, innovaccer, commvault, youngun, gagan_talreja, gagan.talreja" />
+        content="gagan,talreja, gagan talreja, resume, website, cv, bennett, innovaccer, schrodinger, commvault, youngun, gagan_talreja, gagan.talreja" />
     <meta name="author" content="gagan talreja" />
 
-    <!-- Favicons -->
-    <!-- <link href="assets/img/programmer.png" rel="icon"> -->
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet"> -->
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Merriweather:wght@700&display=swap"
         rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: auto;
+            width: 640px;
+            padding: 50px;
+            font-family: 'Merriweather', serif;
+        }
+
+        #company-span {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-color: palevioletred;
+            cursor: pointer;
+        }
+
+        div.main-container {
+            padding-top: 40%;
+        }
+
+        .logo {
+            width: 60px;
+        }
+
+        .contact:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+        #dark-mode-switch {
+            line-height: 12px;
+            width: 40px;
+            font-size: 20px;
+            font-family: tahoma;
+            margin-top: 30px;
+            margin-right: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: transparent;
+            border: none;
+        }
+
+        #dark-mode-img {
+            width: 30px;
+            -webkit-animation: spin 4s linear infinite;
+            -moz-animation: spin 4s linear infinite;
+            animation: spin 2s infinite linear;
+        }
+
+        .contact {
+            margin-left: 20px;
+            margin-right: 20px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .bi {
+            font-size: 25px;
+        }
+
+        .footer {
+            padding-top: 45%
+        }
+
+        @-moz-keyframes spin {
+            100% {
+                -moz-transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            body {
+                width: auto;
+            }
+
+            div.main-container {
+                padding-top: 70%;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            div.main-container {
+                padding-top: 55%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            div.main-container {
+                padding-top: 80%;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            div.main-container {
+                padding-top: 50%;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            body {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 2.6vh;
+            }
+
+            h5 {
+                font-size: 1.6vh;
+            }
+
+            .bi {
+                font-size: 2.5vh;
+            }
+
+            .contact {
+                margin-left: 10px;
+                margin-right: 10px;
+                text-decoration: none;
+                color: white;
+            }
+
+            .footer {
+                padding-top: 55%
+            }
+
+            div.main-container {
+                padding-top: 90%;
+            }
+        }
+    </style>
 </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150949917-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-150949917-1');
-</script>
 
 <body>
-    <!-- ======= Header ======= -->
-    <header id="header">
-        <div class="container">
 
-            <h1><a href="index.html">Gagan Talreja</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-            <h2>I am a <span>Software Engineer</span></h2>
-
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link active" href="#header">Home</a></li>
-                    <li><a class="nav-link" href="#about">About</a></li>
-                    <li><a class="nav-link" href="#resume">Resume</a></li>
-                    <!-- <li><a class="nav-link" href="#certification">Certification</a></li> -->
-                    <!-- <li><a class="nav-link" href="#portfolio">Projects</a></li> -->
-                    <li><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
-            <!-- .navbar -->
-
-            <div class="social-links">
-                <a href="https://twitter.com/gagan_talreja" target="_blank" class="twitter">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <a href="https://github.com/gagantalreja" class="facebook"><i class="bi bi-github"></i></a>
-                <a href="https://instagram.com/gagantalreja" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/gagantalreja/" target="_blank" class="linkedin">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-            </div>
-
+    <button id="dark-mode-switch" onclick="changeMode(this)" mode="dark">
+        <img src="./assets/img/moon-light.png" alt="" id="dark-mode-img">
+    </button>
+    <div class="main-container mt-5">
+        <h1 class="text-center">Hey there <span id="hand-span">&#128075; </span>, I am Gagan.</h1>
+        <h5 class="pt-2 text-center"><span id="profile-span">SRE</span> @ <span id="company-span"
+                link="https://innovaccer.com" onclick="openWebsite(this)">Innovaccer</span></h5>
+    </div>
+    <div class="container mt-5 footer">
+        <div class="text-center">
+            <a target="_blank" class="contact" href="https://linkedin.com/in/gagantalreja"><i
+                    class="bi bi-linkedin"></i></a>
+            <a target="_blank" class="contact" href="https://github.com/gagantalreja"><i class="bi bi-github"></i></a>
+            <a target="_blank" class="contact" href="https://instagram.com/gagantalreja"><i
+                    class="bi bi-instagram"></i></a>
+            <a target="_blank" class="contact" href="https://twitter.com/gagan_talreja"><i
+                    class="bi bi-twitter"></i></a>
+            <a target="_blank" class="contact" href="mailto: gtcms1@gmail.com"><i class="bi bi-envelope"></i></a>
         </div>
-    </header><!-- End Header -->
+    </div>
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
 
-        <!-- ======= About Me ======= -->
-        <div class="about-me container">
-
-            <div class="section-title">
-                <h2>About</h2>
-                <p>Learn more about me</p>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4" data-aos="fade-right">
-                    <img src="assets/img/gagan1.jpeg" class="img-fluid gagan-img" alt="">
-                </div>
-                <div class="col-lg-8 pt-4 pt-lg-3 content" data-aos="fade-left">
-                    <h3>Software Engineer</h3>
-                    <!-- <p class="fst-italic"> -->
-                    <p>
-                        I am a passionate Software Engineer curretnly working as a Site Reliability Engineer at
-                        Innovaccer. I have strong skill set for application development with industry standards,
-                        managing enterprise level infrastructure and automating day to day tasks. I am experienced in:
-
-                        - Coding in various programming languages like Python, Java, Go, PHP and JS.
-                        - Managing large scale cloud infrastructure on cloud platforms like AWS and Azure.
-                        - Making infrastructure more reliable by automating tasks and enabbling monitoring and logging
-                        for visibility.
-                        - Working in collaboration with various people with diverse skills to solve various issues.
-                        - Developing products with industry scale coding practices.
-                    </p>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <ul>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91
-                                        99369-88492</span></li>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Residence:</strong> <span>India</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>B. Tech</span>
-                                </li>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
-                                    <span>gtcms1@gmail.com</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- <p>
-            Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut.
-            Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-            Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
-            Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
-          </p> -->
-                </div>
-            </div>
-
-        </div><!-- End About Me -->
-
-        <!-- Skills Section -->
-        <div class="interests container">
-
-            <div class="section-title">
-                <h2>Skills</h2>
-            </div>
-            <div class="row section-title">
-                <h3>Development</h3>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                    <div class="icon-box">
-                        <img src="./assets/img/skills/python.png" class="icon-img" alt="">
-                        <h3>Python</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                    <div class="icon-box">
-                        <!-- <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i> -->
-                        <img src="./assets/img/skills/flask.png" class="icon-img" alt="">
-                        <h3>Flask</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                    <div class="icon-box">
-                        <!-- <i class="ri-calendar-todo-line" style="color: #e80368;"></i> -->
-                        <img src="./assets/img/skills/java-script.png" class="icon-img" alt="">
-                        <h3>JavaScript</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                    <div class="icon-box">
-                        <img src="./assets/img/skills/java.png" class="icon-img" alt="">
-                        <!-- <i class="ri-paint-brush-line" style="color: #e361ff;"></i> -->
-                        <h3>Java</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="height: 20px;"></div>
-            <div class="row section-title">
-                <h3>DevOps</h3>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-4">
-                    <div class="icon-box">
-                        <!-- <i class="ri-store-line" style="color: #ffbb2c;"></i> -->
-                        <img src="./assets/img/skills/kubernetes.svg" class="icon-img" alt="">
-                        <h3>Kubernetes</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                    <div class="icon-box">
-                        <!-- <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i> -->
-                        <img src="./assets/img/skills/aws.png" class="icon-img" alt="">
-                        <h3>Cloud(AWS)</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                    <div class="icon-box">
-                        <img src="./assets/img/skills/jenkins.png" class="icon-img" alt="">
-                        <!-- <i class="ri-calendar-todo-line" style="color: #e80368;"></i> -->
-                        <h3>Jenkins</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-                    <div class="icon-box">
-                        <!-- <i class="ri-paint-brush-line" style="color: #e361ff;"></i> -->
-                        <img src="./assets/img/skills/terraform.png" class="icon-img" alt="">
-                        <h3>Terraform</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4">
-                    <div class="icon-box">
-                        <!-- <i class="ri-database-2-line" style="color: #47aeff;"></i> -->
-                        <img src="./assets/img/skills/ansible.png" class="icon-img" alt="">
-                        <h3>Ansbile</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4">
-                    <div class="icon-box">
-                        <!-- <i class="ri-gradienter-line" style="color: #ffa76e;"></i> -->
-                        <img src="./assets/img/skills/argo.png" class="icon-img" alt="">
-                        <h3>GitOps(ArgoCD)</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4">
-                    <div class="icon-box">
-                        <!-- <i class="ri-file-list-3-line" style="color: #11dbcf;"></i> -->
-                        <img src="./assets/img/skills/docker.png" class="icon-img" alt="">
-                        <h3>Docker</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4">
-                    <div class="icon-box">
-                        <!-- <i class="ri-price-tag-2-line" style="color: #4233ff;"></i> -->
-                        <img src="./assets/img/skills/helm.png" class="icon-img" alt="">
-                        <h3>Helm</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- End Skills -->
-
-        <!-- ======= Interests ======= -->
-        <!-- <div class="interests container">
-
-            <div class="section-title">
-                <h2>Interests</h2>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3 col-md-4">
-                    <div class="icon-box">
-                        <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-                        <h3>DevOps</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                    <div class="icon-box">
-                        <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-                        <h3>SecOps</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                    <div class="icon-box">
-                        <i class="ri-database-2-line" style="color: #47aeff;"></i>
-                        <h3>Backend Development</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-                    <div class="icon-box">
-                        <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-                        <h3>Frontend Development</h3>
-                    </div>
-                </div>
-            </div> -->
-
-        </div><!-- End Interests -->
-
-        <!-- ======= Testimonials ======= -->
-        <div class="testimonials container">
-
-            <div class="section-title">
-                <h2>Testimonials</h2>
-            </div>
-
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper-wrapper">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                I managed Gagan on several projects, and I
-                                was lucky to have him in the team. He consistently gave 100 percent effort in
-                                his work and completed his tasks
-                                on time. He has excellent time management and technical skills and also has a knack for
-                                keeping everyone calm and productive during intense crunch periods. I highly
-                                recommend him for his technical and leadership skills.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/vikas.jpeg" class="testimonial-img" alt="">
-                            <h3><a href="https://www.linkedin.com/in/vikas-solanki-0a7b97114/" target="_blank">Vikas
-                                    Solanki</a></h3>
-                            <h4>Senior Manager - SRE, Innovaccer</h4>
-                        </div>
-
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Gagan has been a part of our team for about 7 months and we highly appreciate
-                                his dedication towards getting things done. He always responds to escalations and
-                                bugs promptly and shows full responsibility towards the tasks that he takes up. He
-                                does not rely on the pre-decided techniques and frameworks and always finds innovative
-                                ways
-                                to do things.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/saksham.jpeg" class="testimonial-img" alt="">
-                            <h3><a href="https://www.linkedin.com/in/sakshamjd/" , target="_blank">Saksham Jadon</a>
-                            </h3>
-                            <h4>Founder and CEO, Youngun India</h4>
-                        </div>
-                </div>
-            </div>
-
-            <!-- <div class="owl-carousel testimonials-carousel">
-
-      </div> -->
-
-        </div><!-- End Testimonials  -->
-
-    </section><!-- End About Section -->
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Resume</h2>
-                <!-- <p>Check My Resume</p> -->
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3 class="resume-title">Sumary</h3>
-                    <div class="resume-item pb-0">
-                        <h4>What I Do</h4>
-                        <p>
-                            <em>
-                                I am a Software Engineer with 1+ year of experience in the product and
-                                consulting industry.
-                            </em>
-                        </p>
-                        <p>
-                        <ul>
-                            <li>+91 99369-88492</li>
-                            <li>gtcms1@gmail.com</li>
-                        </ul>
-                        </p>
-                    </div>
-
-                    <h3 class="resume-title">Education</h3>
-                    <div class="resume-item">
-                        <h4>Bachelor of Technology</h4>
-                        <h5>2017 - 2021</h5>
-                        <p><em><a href="https://bennett.edu.in" target="_blank" class="no-css">Bennett
-                                    University</a></em></p>
-                        <p>
-                            I have an specialisation in <bold>Computer Science &amp; Engineering</bold>. I graduated
-                            with
-                            a CGPA of 9.34.
-                        </p>
-                    </div>
-                    <h3 class="resume-title">Internships</h3>
-                    <div class="resume-item">
-                        <h4>Development Intern</h4>
-                        <h5>Jan, 21 - Sept, 21</h5>
-                        <p><em><a href="https://commvault.com" target="_blank" class="no-css">Commvault</a></em></p>
-                        <p>
-                        <ul>
-                            <li>
-                                Responsible for analysing features deeply and reporting
-                                any possible bugs or fixes. Also, created scripts for automating test cases.
-                            </li>
-                        </ul>
-                        </p>
-                    </div>
-                    <div class="resume-item">
-                        <h4>Technology Intern</h4>
-                        <h5>Jan, 21 - Sept, 21</h5>
-                        <p><em><a href="https://mindhug.io" target="_blank" class="no-css">MindHug</a></em></p>
-                        <p>
-                        <ul>
-                            <li>
-                                Worked towards developing a platform to help people with mental health issues,
-                                connect with various therapists and mental health specialists.
-                            </li>
-                        </ul>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="resume-title">Professional Experience</h3>
-                    <div class="resume-item">
-                        <h4>SITE RELIABILITY ENGINEER 2</h4>
-                        <h5>Oct, 21 - Present</h5>
-                        <p><em><a href="https://innovaccer.com" target="_blank" class="no-css">Innovaccer</a></em></p>
-                        <p>
-                        <ul>
-                            <li>
-                                Worked developing a pipeline for end to end deployment of
-                                cloud resources and Innovaccer applications in one click.
-                            </li>
-                            <li>
-                                Created automation scripts in Python for obtaining usage
-                                of different resources on AWS to estimate and reduce cloud costs.
-                            </li>
-                            <li>
-                                Worked with a dedicated team to develop an infrastructure installer
-                                for deploying services on cloud using Python and Terraform.
-                            </li>
-                            <li>
-                                Worked on creating automation scripts for deploying
-                                and monitoring security tools.
-                            </li>
-                            <li>
-                                Worked on automating migration of data between cloud
-                                data resources like RDS, Elasticsearch and AWS S3.
-                            </li>
-                            <li>
-                                Solving Production Incidents.
-                            </li>
-                        </ul>
-                        </p>
-                    </div>
-                    <div class="resume-item">
-                        <h4>Freelance Web Developer</h4>
-                        <h5>Feb, 20 - Jan, 21</h5>
-                        <p><em><a href="https://youngun.in" target="_blank" class="no-css">Youngun India</a></em></p>
-                        <p>
-                        <ul>
-                            <li>
-                                Developed towards creating a platform that can be used to assign
-                                social media meme content to influencers and social media celebrities
-                                for promotion and maintain a record of how a specific piece of content
-                                is performing online.
-                            </li>
-                            <li>
-                                Created social media scrapers to collect data from various social media
-                                platforms like Facebook, Instagram and Twitter. This data was further
-                                refined using some formulas to produce performance metric for content.
-                            </li>
-                            <li>
-                                Developed a dashboard that will be used by the
-                                admin to assign social media platforms to the content provided by their clients.
-                            </li>
-                        </ul>
-                        </li>
-                        </ul>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="certification" class="services">
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Certificates</h2>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="icon-box">
-                        <div class="icon-img">
-                            <a href="https://www.credly.com/badges/82402b14-36df-4b74-8b0c-85dd83b19729"
-                                target="_blank">
-                                <img src="assets/img/certificate/ckad.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="icon-box">
-                        <div class="icon-img">
-                            <a href="" target="_blank">
-                                <img src="assets/img/certificate/argocd_fundamental.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="icon-box">
-                        <div class="icon-img">
-                            <a href="" target="_blank">
-                                <img src="assets/img/certificate/argocd_scale.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- End Services Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Projects</h2>
-                <p>My Works</p>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12 d-flex justify-content-center">
-                    <ul id="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-card">Card</li>
-                        <li data-filter=".filter-web">Web</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="row portfolio-container">
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 1</h4>
-                            <p>App</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery"
-                                    data-glightbox="type: external" class="portfolio-details-lightbox"
-                                    title="Portfolio Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery"
-                                    data-glightbox="type: external" class="portfolio-details-lightbox"
-                                    title="Portfolio Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 2</h4>
-                            <p>App</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery"
-                                    data-glightbox="type: external" class="portfolio-details-lightbox"
-                                    title="Portfolio Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 2</h4>
-                            <p>Card</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery"
-                                    data-glightbox="type: external" class="portfolio-details-lightbox"
-                                    title="Portfolio Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 2</h4>
-                            <p>Web</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery"
-                                    data-glightbox="type: external" class="portfolio-details-lightbox"
-                                    title="Portfolio Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 3</h4>
-                            <p>App</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery"
-                                    data-glightbox="type: external" class="portfolio-details-lightbox"
-                                    title="Portfolio Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 1</h4>
-                            <p>Card</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery"
-                                    data-glightbox="type: external" class="portfolio-details-lightbox"
-                                    title="Portfolio Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 3</h4>
-                            <p>Card</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery"
-                                    data-glightbox="type: external" class="portfolio-details-lightbox"
-                                    title="Portfolio Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery"
-                                    data-glightbox="type: external" class="portfolio-details-lightbox"
-                                    title="Portfolio Details"><i class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Contac t Section ======= -->
-    <section id="contact" class="contact">
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Contact</h2>
-                <p>Contact Me</p>
-            </div>
-
-            <div class="row mt-2">
-
-                <!-- <div class="col-md-6 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-map"></i>
-            <h3>My Address</h3>
-            <p>Sector 62, Noida, UP, India</p>
-          </div>
-        </div> -->
-
-                <div class="col-md-6 mt-4 d-flex align-items-stretch">
-                    <div class="info-box">
-                        <i class="bx bx-share-alt"></i>
-                        <h3>Connect With Me</h3>
-                        <div class="social-links">
-                            <a href="https://twitter.com/gagan_talreja" class="twitter"><i
-                                    class="bi bi-twitter"></i></a>
-                            <a href="https://instagram.com/gagantalreja" class="instagram"><i
-                                    class="bi bi-instagram"></i></a>
-                            <a href="mailto:gtcms1@gmail.com" class="google-plus"><i class="bi bi-envelope"></i></a>
-                            <a href="https://www.linkedin.com/in/gagantalreja/" class="linkedin"><i
-                                    class="bi bi-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col-md-6 mt-4 d-flex align-items-stretch">
-                    <div class="info-box">
-                        <i class="bx bx-envelope"></i>
-                        <h3>Email Me</h3>
-                        <p>ayushsoni47.as@gmail.com</p>
-                    </div>
-                </div> -->
-                <div class="col-md-6 mt-4 d-flex align-items-stretch">
-                    <div class="info-box">
-                        <i class="bx bx-phone-call"></i>
-                        <h3>Call Me</h3>
-                        <p>+91 99369-88492</p>
-                    </div>
-                </div>
-            </div>
-
-            <form method="post" role="form" class="php-email-form mt-4" onsubmit="return postToGoogle(event);">
-                <div class="row">
-                    <div class="col-md-6 form-group">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="col-md-6 form-group mt-3 mt-md-0">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                            required>
-                    </div>
-                </div>
-                <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                </div>
-                <div class="form-group mt-3">
-                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Message"
-                        required></textarea>
-                </div>
-                <div class="my-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-
-        </div>
-    </section><!-- End Contact Section -->
-
-    <!-- Vendor JS Files -->
     <script src="assets/js/jquery-2.1.3.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script>
+        const openWebsite = (e) => {
+            const link = e.getAttribute("link");
+            window.open(link, "_blank")
+        }
+
+        const colorMap = {
+            "linkedin": "#0077b5",
+            "instagram": "#C13584",
+            "twitter": "#1DA1F2",
+            "envelope": "#f2a60c",
+            "github": "#c9510c"
+        }
+
+        Array.from(document.getElementsByClassName("bi")).forEach(element => {
+            const social = element.getAttribute("class").split(" ")[1].split("bi-")[1];
+
+            element.addEventListener("mouseenter", (e) => {
+                element.style.color = colorMap[social];
+            });
+
+            element.addEventListener("mouseleave", (e) => {
+                const currentMode = document.getElementById("dark-mode-switch").getAttribute("mode");
+                if (currentMode === "dark")
+                    element.style.color = "white";
+                else
+                    element.style.color = "black";
+            });
+        });
+
+        const changeMode = (e) => {
+            const currentMode = e.getAttribute("mode");
+            if (currentMode === "dark") {
+                document.getElementById("hand-span").innerHTML = "&#128075;&#127998;"
+                document.getElementById("dark-mode-switch").setAttribute("mode", "light");
+                document.getElementById("dark-mode-img").setAttribute("src", "./assets/img/full-moon.png");
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+                Array.from(document.getElementsByClassName("bi")).forEach(element => {
+                    element.style.color = "black";
+                });
+            } else {
+                document.getElementById("hand-span").innerHTML = "&#128075;"
+                document.getElementById("dark-mode-switch").setAttribute("mode", "dark");
+                document.getElementById("dark-mode-img").setAttribute("src", "./assets/img/moon-light.png");
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+                Array.from(document.getElementsByClassName("bi")).forEach(element => {
+                    element.style.color = "white";
+                });
+            }
+        }
+    </script>
 
 </body>
-
-<!-- Mirrored from lmpixels.com/demo/breezycv/dark/6/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Dec 2020 12:24:23 GMT -->
-
-</html>
