@@ -8,27 +8,16 @@
   <meta name="keywords"
     content="gagan,talreja,gagan talreja,resume,website,cv,bennett,innovaccer,schrodinger,commvault,youngun,devops,infra,backend,sde,sre,gagan_talreja,gagan.talreja" />
   <meta name="author" content="gagan talreja" />
-  <title>Gagan Talreja — Infrastructure Engineer</title>
+  <title>Gagan Talreja</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Noto+Serif+Devanagari:wght@300;400;500;600;700&family=Baloo+2:wght@700;800&display=swap"
     rel="stylesheet" />
   <style>
-    :root {
-      --bg: #080c0f;
-      --surface: #0e1419;
-      --surface2: #141d26;
-      --border: rgba(0, 255, 140, 0.12);
-      --green: #00ff8c;
-      --green-dim: rgba(0, 255, 140, 0.08);
-      --green-mid: rgba(0, 255, 140, 0.4);
-      --amber: #ffb347;
-      --text: #c8d6e0;
-      --text-dim: #607080;
-      --text-bright: #eaf2f8;
-    }
-
+    /* ═══════════════════════════════════════════
+       SHARED / RESET
+    ═══════════════════════════════════════════ */
     *,
     *::before,
     *::after {
@@ -42,9 +31,6 @@
     }
 
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
       overflow-x: hidden;
       cursor: none;
       font-size: 16px;
@@ -56,48 +42,246 @@
       position: fixed;
       width: 10px;
       height: 10px;
-      background: var(--green);
       border-radius: 50%;
       pointer-events: none;
-      z-index: 9999;
+      z-index: 99999;
       transform: translate(-50%, -50%);
-      box-shadow: 0 0 10px var(--green), 0 0 20px rgba(0, 255, 140, 0.25);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .cursor.tech {
+      background: #00ff8c;
+      box-shadow: 0 0 10px #00ff8c, 0 0 20px rgba(0, 255, 140, .25);
+    }
+
+    .cursor.hindi {
+      background: #f4a140;
+      box-shadow: 0 0 10px #f4a140, 0 0 20px rgba(244, 161, 64, .25);
     }
 
     .cursor-ring {
       position: fixed;
       width: 34px;
       height: 34px;
-      border: 1px solid rgba(0, 255, 140, 0.45);
       border-radius: 50%;
       pointer-events: none;
-      z-index: 9998;
+      z-index: 99998;
       transform: translate(-50%, -50%);
-      transition: width 0.15s, height 0.15s, background 0.15s, border-color 0.15s;
+      transition: width .15s, height .15s, background .15s, border-color .15s, border .3s;
+    }
+
+    .cursor-ring.tech {
+      border: 1px solid rgba(0, 255, 140, .45);
+    }
+
+    .cursor-ring.hindi {
+      border: 1px solid rgba(244, 161, 64, .45);
     }
 
     .cursor-ring.hover {
       width: 52px;
       height: 52px;
-      border-color: var(--green);
-      background: rgba(0, 255, 140, 0.05);
     }
 
-    /* Grid background */
-    body::after {
+    .cursor-ring.hover.tech {
+      border-color: #00ff8c;
+      background: rgba(0, 255, 140, .05);
+    }
+
+    .cursor-ring.hover.hindi {
+      border-color: #f4a140;
+      background: rgba(244, 161, 64, .05);
+    }
+
+    /* ═══════════════════════════════════════════
+       FLIP WRAPPER
+    ═══════════════════════════════════════════ */
+    #flipWrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .face {
+      width: 100%;
+      min-height: 100vh;
+      backface-visibility: hidden;
+      transform-origin: center center;
+      transition: none;
+    }
+
+    .face.flipping-out {
+      animation: flipOut 0.45s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+    }
+
+    .face.flipping-in {
+      animation: flipIn 0.45s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+    }
+
+    @keyframes flipOut {
+      0% {
+        transform: perspective(1400px) rotateY(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: perspective(1400px) rotateY(-90deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes flipIn {
+      0% {
+        transform: perspective(1400px) rotateY(90deg);
+        opacity: 0;
+      }
+
+      100% {
+        transform: perspective(1400px) rotateY(0deg);
+        opacity: 1;
+      }
+    }
+
+    /* ═══════════════════════════════════════════
+       ████  TECH SIDE  ████
+    ═══════════════════════════════════════════ */
+    #techSide {
+      font-family: 'DM Sans', sans-serif;
+      background: #080c0f;
+      color: #c8d6e0;
+    }
+
+    #techSide body {
+      background: #080c0f;
+    }
+
+    /* Tech CSS variables as classes */
+    .tech-bg {
+      background: #080c0f;
+    }
+
+    .tech-surface {
+      background: #0e1419;
+    }
+
+    .tech-s2 {
+      background: #141d26;
+    }
+
+    /* Grid BG */
+    #techSide::before {
       content: '';
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(0, 255, 140, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 140, 0.025) 1px, transparent 1px);
+        linear-gradient(rgba(0, 255, 140, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 140, .025) 1px, transparent 1px);
       background-size: 60px 60px;
       pointer-events: none;
       z-index: 0;
     }
 
-    /* Layout */
-    .page {
+    /* ─── TECH NAV ─── */
+    #techNav {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 400;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all .3s ease;
+    }
+
+    #techNav.scrolled {
+      background: rgba(8, 12, 15, .92);
+      border-bottom: 1px solid rgba(0, 255, 140, .12);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: #00ff8c;
+      letter-spacing: 1px;
+    }
+
+    .nav-logo span {
+      color: #607080;
+    }
+
+    .t-nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .t-nav-links a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #607080;
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .t-nav-links a:hover {
+      color: #00ff8c;
+    }
+
+    /* Flip button – shared style, themed per side */
+    .flip-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      border: none;
+      cursor: none;
+      clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 0 100%);
+      transition: all .2s;
+      letter-spacing: .3px;
+    }
+
+    .flip-btn-tech {
+      background: rgba(0, 255, 140, .1);
+      color: #00ff8c;
+      border: 1px solid rgba(0, 255, 140, .3);
+    }
+
+    .flip-btn-tech:hover {
+      background: rgba(0, 255, 140, .2);
+      border-color: #00ff8c;
+      box-shadow: 0 0 20px rgba(0, 255, 140, .2);
+    }
+
+    .flip-btn-hindi {
+      background: rgba(244, 161, 64, .1);
+      color: #f4a140;
+      border: 1px solid rgba(244, 161, 64, .3);
+    }
+
+    .flip-btn-hindi:hover {
+      background: rgba(244, 161, 64, .2);
+      border-color: #f4a140;
+      box-shadow: 0 0 20px rgba(244, 161, 64, .2);
+    }
+
+    .flip-icon {
+      display: inline-block;
+      transition: transform .5s ease;
+    }
+
+    .flip-btn:hover .flip-icon {
+      transform: rotateY(180deg);
+    }
+
+    /* ─── TECH PAGE LAYOUT ─── */
+    .t-page {
       position: relative;
       z-index: 1;
       max-width: 1160px;
@@ -105,58 +289,8 @@
       padding: 0 40px;
     }
 
-    /* ─── NAV ─── */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 500;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.3s ease;
-    }
-
-    nav.scrolled {
-      background: rgba(8, 12, 15, 0.92);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(14px);
-    }
-
-    .nav-logo {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
-      color: var(--green);
-      letter-spacing: 1px;
-    }
-
-    .nav-logo span {
-      color: var(--text-dim);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--green);
-    }
-
-    /* ─── HERO ─── */
-    .hero {
+    /* HERO */
+    .t-hero {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -165,115 +299,115 @@
       position: relative;
     }
 
-    .hero-eyebrow {
+    .t-eyebrow {
       display: flex;
       align-items: center;
       gap: 14px;
       margin-bottom: 28px;
       opacity: 0;
-      animation: fadeUp 0.8s ease forwards 0.2s;
+      animation: fadeUp .8s ease forwards .2s;
     }
 
-    .hero-eyebrow-line {
+    .t-eyebrow-line {
       width: 36px;
       height: 1px;
-      background: var(--green);
+      background: #00ff8c;
       flex-shrink: 0;
     }
 
-    .hero-eyebrow-text {
+    .t-eyebrow-text {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
       letter-spacing: 2px;
-      color: var(--green);
+      color: #00ff8c;
       text-transform: uppercase;
     }
 
-    .hero-name {
+    .t-name {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
       font-size: clamp(54px, 8.5vw, 116px);
-      line-height: 0.9;
+      line-height: .9;
       letter-spacing: -4px;
-      color: var(--text-bright);
+      color: #eaf2f8;
       margin-bottom: 28px;
       opacity: 0;
-      animation: fadeUp 0.9s ease forwards 0.4s;
+      animation: fadeUp .9s ease forwards .4s;
     }
 
-    .hero-name .accent {
-      color: var(--green);
+    .t-name .accent {
+      color: #00ff8c;
     }
 
-    .hero-meta {
+    .t-meta {
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-bottom: 32px;
       flex-wrap: wrap;
+      margin-bottom: 32px;
       opacity: 0;
-      animation: fadeUp 0.9s ease forwards 0.6s;
+      animation: fadeUp .9s ease forwards .6s;
     }
 
-    .hero-role {
+    .t-role {
       font-size: 16px;
       font-weight: 400;
-      color: var(--text-dim);
+      color: #607080;
     }
 
     .meta-sep {
-      color: var(--border);
+      color: rgba(0, 255, 140, .2);
       font-size: 18px;
     }
 
-    .hero-company {
+    .t-company {
       font-size: 16px;
       font-weight: 500;
-      color: var(--amber);
+      color: #ffb347;
       text-decoration: none;
-      transition: opacity 0.2s;
+      transition: opacity .2s;
     }
 
-    .hero-company:hover {
-      opacity: 0.7;
+    .t-company:hover {
+      opacity: .7;
     }
 
-    .hero-location {
+    .t-location {
       font-size: 16px;
-      color: var(--text-dim);
+      color: #607080;
     }
 
-    .hero-quote {
+    .t-quote {
       font-family: 'JetBrains Mono', monospace;
       font-size: 18px;
-      color: var(--green);
+      color: #00ff8c;
       margin-bottom: 20px;
       opacity: 0;
-      animation: fadeUp 0.9s ease forwards 0.7s;
+      animation: fadeUp .9s ease forwards .7s;
     }
 
-    .hero-bio {
+    .t-bio {
       max-width: 520px;
       font-size: 16px;
       font-weight: 300;
       line-height: 1.8;
-      color: var(--text-dim);
+      color: #607080;
       margin-bottom: 52px;
       opacity: 0;
-      animation: fadeUp 0.9s ease forwards 0.8s;
+      animation: fadeUp .9s ease forwards .8s;
     }
 
-    .hero-bio strong {
-      color: var(--text);
+    .t-bio strong {
+      color: #c8d6e0;
       font-weight: 500;
     }
 
-    .hero-cta-row {
+    .t-cta {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
       opacity: 0;
-      animation: fadeUp 0.9s ease forwards 1s;
+      animation: fadeUp .9s ease forwards 1s;
     }
 
     .btn-primary {
@@ -281,22 +415,21 @@
       align-items: center;
       gap: 10px;
       padding: 13px 28px;
-      background: var(--green);
+      background: #00ff8c;
       color: #000;
       font-family: 'DM Sans', sans-serif;
       font-size: 14px;
       font-weight: 500;
       text-decoration: none;
-      border: none;
       cursor: none;
-      transition: all 0.2s ease;
+      transition: all .2s;
       clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
     }
 
     .btn-primary:hover {
       background: #fff;
       transform: translateY(-2px);
-      box-shadow: 0 0 28px rgba(0, 255, 140, 0.35);
+      box-shadow: 0 0 28px rgba(0, 255, 140, .35);
     }
 
     .btn-ghost {
@@ -305,24 +438,25 @@
       gap: 10px;
       padding: 13px 28px;
       background: transparent;
-      color: var(--text-dim);
+      color: #607080;
       font-family: 'DM Sans', sans-serif;
       font-size: 14px;
       font-weight: 400;
       text-decoration: none;
-      border: 1px solid var(--border);
       cursor: none;
-      transition: all 0.2s ease;
+      transition: all .2s;
+      border: 1px solid rgba(0, 255, 140, .12);
       clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
     }
 
     .btn-ghost:hover {
-      border-color: var(--green-mid);
-      color: var(--green);
-      background: var(--green-dim);
+      border-color: rgba(0, 255, 140, .4);
+      color: #00ff8c;
+      background: rgba(0, 255, 140, .08);
     }
 
-    .hero-status {
+    /* Status sidebar */
+    .t-status {
       position: absolute;
       right: 0;
       top: 50%;
@@ -334,34 +468,34 @@
       animation: fadeIn 1s ease forwards 1.2s;
     }
 
-    .status-item {
+    .t-status-item {
       display: flex;
       flex-direction: column;
       gap: 4px;
       text-align: right;
     }
 
-    .status-label {
+    .t-status-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 9px;
       letter-spacing: 2px;
-      color: var(--text-dim);
+      color: #607080;
       text-transform: uppercase;
     }
 
-    .status-val {
+    .t-status-val {
       font-size: 14px;
       font-weight: 400;
-      color: var(--text);
+      color: #c8d6e0;
     }
 
-    .status-dot {
+    .t-status-dot {
       display: inline-block;
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 8px var(--green);
+      background: #00ff8c;
+      box-shadow: 0 0 8px #00ff8c;
       animation: pulse 2s ease infinite;
       margin-right: 6px;
     }
@@ -374,28 +508,28 @@
       }
 
       50% {
-        opacity: 0.35
+        opacity: .35
       }
     }
 
-    /* ─── TERMINAL ─── */
+    /* Terminal */
     .terminal {
-      background: var(--surface);
-      border: 1px solid var(--border);
+      background: #0e1419;
+      border: 1px solid rgba(0, 255, 140, .12);
       border-radius: 2px;
       margin: 40px 0 100px;
       overflow: hidden;
       opacity: 0;
-      animation: fadeUp 0.9s ease forwards 1.1s;
+      animation: fadeUp .9s ease forwards 1.1s;
     }
 
     .terminal-bar {
-      background: var(--surface2);
+      background: #141d26;
       padding: 10px 16px;
       display: flex;
       align-items: center;
       gap: 7px;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(0, 255, 140, .12);
     }
 
     .t-dot {
@@ -404,22 +538,22 @@
       border-radius: 50%;
     }
 
-    .t-dot.red {
+    .t-dot.r {
       background: #ff5f56;
     }
 
-    .t-dot.yellow {
+    .t-dot.y {
       background: #ffbd2e;
     }
 
-    .t-dot.green {
+    .t-dot.g {
       background: #27c93f;
     }
 
     .terminal-title {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
-      color: var(--text-dim);
+      color: #607080;
       margin-left: 8px;
     }
 
@@ -430,37 +564,37 @@
       line-height: 2.1;
     }
 
-    .t-prompt {
-      color: var(--green);
+    .tp {
+      color: #00ff8c;
     }
 
-    .t-cmd {
-      color: var(--text-bright);
+    .tc {
+      color: #eaf2f8;
     }
 
-    .t-comment {
-      color: var(--text-dim);
+    .tcomm {
+      color: #607080;
       font-style: italic;
     }
 
-    .t-output {
-      color: var(--text);
+    .to {
+      color: #c8d6e0;
       padding-left: 20px;
     }
 
-    .t-key {
-      color: var(--amber);
+    .tk {
+      color: #ffb347;
     }
 
-    .t-val {
+    .tv {
       color: #7ec8e3;
     }
 
-    .t-cursor {
+    .tcursor {
       display: inline-block;
       width: 8px;
       height: 14px;
-      background: var(--green);
+      background: #00ff8c;
       animation: blink 1s step-end infinite;
       vertical-align: middle;
     }
@@ -477,311 +611,895 @@
       }
     }
 
-    /* ─── SECTION COMMON ─── */
-    section {
+    /* Section common – tech */
+    .t-section {
       padding: 100px 0;
     }
 
-    .section-header {
+    .t-section-header {
       display: flex;
       align-items: center;
       gap: 18px;
       margin-bottom: 60px;
     }
 
-    .section-number {
+    .t-sec-num {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
       letter-spacing: 2px;
-      color: var(--green);
+      color: #00ff8c;
       text-transform: uppercase;
       flex-shrink: 0;
     }
 
-    .section-title {
+    .t-sec-title {
       font-family: 'Syne', sans-serif;
       font-size: clamp(34px, 5vw, 58px);
       font-weight: 800;
-      color: var(--text-bright);
+      color: #eaf2f8;
       letter-spacing: -2px;
       line-height: 1;
     }
 
-    .section-line {
+    .t-sec-line {
       flex: 1;
       height: 1px;
-      background: var(--border);
+      background: rgba(0, 255, 140, .12);
     }
 
-    /* ─── SKILLS ─── */
-    .skills-grid {
+    /* Skills */
+    .t-skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 2px;
     }
 
-    .skill-category {
-      background: var(--surface);
-      border: 1px solid var(--border);
+    .t-skill-cat {
+      background: #0e1419;
+      border: 1px solid rgba(0, 255, 140, .12);
       padding: 28px 30px;
-      transition: all 0.3s ease;
+      transition: all .3s;
       position: relative;
       overflow: hidden;
     }
 
-    .skill-category::before {
+    .t-skill-cat::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 2px;
       height: 0;
-      background: var(--green);
-      transition: height 0.3s ease;
+      background: #00ff8c;
+      transition: height .3s;
     }
 
-    .skill-category:hover::before {
+    .t-skill-cat:hover::before {
       height: 100%;
     }
 
-    .skill-category:hover {
-      background: var(--surface2);
-      border-color: var(--green-mid);
+    .t-skill-cat:hover {
+      background: #141d26;
+      border-color: rgba(0, 255, 140, .4);
     }
 
-    .skill-cat-label {
+    .t-skill-cat-label {
       font-family: 'DM Sans', sans-serif;
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 1.5px;
-      color: var(--green);
+      color: #00ff8c;
       text-transform: uppercase;
       margin-bottom: 16px;
     }
 
-    .skill-tags {
+    .t-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .skill-tag {
+    .t-tag {
       font-family: 'DM Sans', sans-serif;
       font-size: 14px;
       font-weight: 400;
       padding: 5px 13px;
-      border: 1px solid var(--border);
-      color: var(--text);
-      transition: all 0.2s;
+      border: 1px solid rgba(0, 255, 140, .12);
+      color: #c8d6e0;
+      transition: all .2s;
     }
 
-    .skill-category:hover .skill-tag {
-      border-color: rgba(0, 255, 140, 0.18);
+    .t-skill-cat:hover .t-tag {
+      border-color: rgba(0, 255, 140, .18);
     }
 
-    /* ─── EXPERIENCE ─── */
-    .experience-list {
+    /* Experience */
+    .t-exp-list {
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
 
-    .exp-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
+    .t-exp-card {
+      background: #0e1419;
+      border: 1px solid rgba(0, 255, 140, .12);
       padding: 40px;
       display: grid;
       grid-template-columns: 220px 1fr;
       gap: 0 52px;
-      transition: all 0.3s ease;
+      transition: all .3s;
       position: relative;
       overflow: hidden;
     }
 
-    .exp-card::before {
+    .t-exp-card::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 2px;
       height: 0;
-      background: var(--green);
-      transition: height 0.35s ease;
+      background: #00ff8c;
+      transition: height .35s;
     }
 
-    .exp-card:hover::before {
+    .t-exp-card:hover::before {
       height: 100%;
     }
 
-    .exp-card:hover {
-      border-color: var(--green-mid);
-      background: var(--surface2);
+    .t-exp-card:hover {
+      border-color: rgba(0, 255, 140, .4);
+      background: #141d26;
     }
 
-    .exp-period {
+    .t-exp-period {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
       letter-spacing: 1px;
-      color: var(--green);
+      color: #00ff8c;
       margin-bottom: 8px;
       display: block;
     }
 
-    .exp-company {
+    .t-exp-company {
       font-family: 'Syne', sans-serif;
       font-size: 22px;
       font-weight: 700;
-      color: var(--text-bright);
-      letter-spacing: -0.5px;
+      color: #eaf2f8;
+      letter-spacing: -.5px;
       margin-bottom: 6px;
     }
 
-    .exp-location {
+    .t-exp-loc {
       font-size: 14px;
-      color: var(--text-dim);
+      color: #607080;
       font-weight: 300;
     }
 
-    .exp-role {
+    .t-exp-role {
       font-size: 17px;
       font-weight: 500;
-      color: var(--amber);
+      color: #ffb347;
       margin-bottom: 16px;
     }
 
-    .exp-desc {
+    .t-exp-desc {
       font-size: 15px;
       font-weight: 300;
       line-height: 1.8;
-      color: var(--text-dim);
+      color: #607080;
       margin-bottom: 22px;
     }
 
-    .exp-desc strong {
-      color: var(--text);
+    .t-exp-desc strong {
+      color: #c8d6e0;
       font-weight: 500;
     }
 
-    .exp-tags {
+    .t-exp-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .exp-tag {
+    .t-exp-tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
       letter-spacing: 1px;
       padding: 4px 10px;
-      border: 1px solid var(--border);
-      color: var(--text-dim);
+      border: 1px solid rgba(0, 255, 140, .12);
+      color: #607080;
     }
 
-    /* ─── CONNECT ─── */
-    .connect-grid {
+    /* Connect – tech */
+    .t-connect-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 2px;
     }
 
-    .connect-card {
+    .t-connect-card {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background: var(--surface);
-      border: 1px solid var(--border);
+      background: #0e1419;
+      border: 1px solid rgba(0, 255, 140, .12);
       padding: 30px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all .3s;
       min-height: 148px;
     }
 
-    .connect-card:hover {
-      border-color: var(--green-mid);
-      background: var(--surface2);
+    .t-connect-card:hover {
+      border-color: rgba(0, 255, 140, .4);
+      background: #141d26;
     }
 
-    .connect-platform {
+    .t-connect-platform {
       font-family: 'JetBrains Mono', monospace;
       font-size: 9px;
       letter-spacing: 2px;
-      color: var(--text-dim);
+      color: #607080;
       text-transform: uppercase;
       margin-bottom: 12px;
     }
 
-    .connect-icon {
+    .t-connect-icon {
       font-size: 22px;
       margin-bottom: auto;
       margin-top: 6px;
     }
 
-    .connect-handle {
+    .t-connect-handle {
       font-family: 'Syne', sans-serif;
       font-size: 20px;
       font-weight: 700;
-      color: var(--text-bright);
-      letter-spacing: -0.3px;
-      transition: color 0.2s;
+      color: #eaf2f8;
+      transition: color .2s;
     }
 
-    .connect-card:hover .connect-handle {
-      color: var(--green);
+    .t-connect-card:hover .t-connect-handle {
+      color: #00ff8c;
     }
 
-    /* ─── FOOTER ─── */
-    footer {
-      border-top: 1px solid var(--border);
+    /* Tech footer */
+    .t-footer {
+      border-top: 1px solid rgba(0, 255, 140, .12);
       padding: 40px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .footer-left {
+    .t-footer-left {
       font-size: 14px;
-      font-weight: 400;
-      color: var(--text-dim);
+      color: #607080;
     }
 
-    .footer-left strong {
-      color: var(--green);
+    .t-footer-left strong {
+      color: #00ff8c;
       font-weight: 500;
     }
 
-    .footer-right {
+    .t-footer-right {
       font-family: 'JetBrains Mono', monospace;
       font-size: 13px;
-      color: var(--text-dim);
+      color: #607080;
     }
 
-    /* ─── ANIMATIONS ─── */
+    /* ═══════════════════════════════════════════
+       ████  HINDI / WRITING SIDE  ████
+    ═══════════════════════════════════════════ */
+    #hindiSide {
+      display: none;
+      font-family: 'Noto Serif Devanagari', serif;
+      background: #120d08;
+      color: #e8d5b7;
+    }
+
+    /* Warm grid BG */
+    #hindiSide::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(244, 161, 64, .03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(244, 161, 64, .03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Hindi nav */
+    #hindiNav {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 400;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all .3s;
+    }
+
+    #hindiNav.scrolled {
+      background: rgba(18, 13, 8, .94);
+      border-bottom: 1px solid rgba(244, 161, 64, .18);
+      backdrop-filter: blur(14px);
+    }
+
+    .h-nav-logo {
+      font-family: 'Baloo 2', cursive;
+      font-size: 18px;
+      font-weight: 700;
+      color: #f4a140;
+      letter-spacing: .5px;
+    }
+
+    .h-nav-logo span {
+      color: #7a6040;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    .h-nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .h-nav-links a {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #7a6040;
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .h-nav-links a:hover {
+      color: #f4a140;
+    }
+
+    /* Hindi page layout */
+    .h-page {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* Hindi hero */
+    .h-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 100px;
+      position: relative;
+    }
+
+    .h-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards .2s;
+    }
+
+    .h-eyebrow-line {
+      width: 40px;
+      height: 1px;
+      background: #f4a140;
+      flex-shrink: 0;
+    }
+
+    .h-eyebrow-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      color: #f4a140;
+      text-transform: uppercase;
+    }
+
+    .h-name {
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      font-size: clamp(52px, 8vw, 110px);
+      line-height: .95;
+      letter-spacing: -2px;
+      color: #f5e6cc;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp .9s ease forwards .4s;
+    }
+
+    .h-name .h-accent {
+      color: #f4a140;
+    }
+
+    .h-tagline {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(20px, 3vw, 32px);
+      font-weight: 600;
+      color: #f4a140;
+      margin-bottom: 14px;
+      letter-spacing: .5px;
+      opacity: 0;
+      animation: fadeUp .9s ease forwards .55s;
+    }
+
+    .h-tagline-en {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: #7a6040;
+      margin-bottom: 36px;
+      letter-spacing: .3px;
+      opacity: 0;
+      animation: fadeUp .9s ease forwards .65s;
+    }
+
+    .h-bio {
+      max-width: 560px;
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.9;
+      color: #b8956a;
+      margin-bottom: 52px;
+      opacity: 0;
+      animation: fadeUp .9s ease forwards .75s;
+    }
+
+    .h-bio strong {
+      color: #e8d5b7;
+      font-weight: 600;
+    }
+
+    .h-ghalib {
+      max-width: 520px;
+      margin-bottom: 44px;
+      opacity: 0;
+      animation: fadeUp .9s ease forwards .75s;
+    }
+
+    .h-ghalib-verse {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.9;
+      color: #b8956a;
+    }
+
+    .h-ghalib-attr {
+      display: inline;
+      margin-left: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      color: #7a6040;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+
+    .h-ghalib-side {
+      text-align: right;
+    }
+
+    .h-ghalib-side-verse {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.9;
+      color: #6a5035;
+      letter-spacing: .2px;
+    }
+
+    .h-ghalib-side-attr {
+      display: block;
+      margin-top: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      color: #a07850;
+      text-transform: uppercase;
+    }
+
+    .h-cta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp .9s ease forwards .9s;
+    }
+
+    .btn-saffron {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 28px;
+      background: #f4a140;
+      color: #1a0f00;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: none;
+      transition: all .2s;
+      clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+    }
+
+    .btn-saffron:hover {
+      background: #ffc06e;
+      transform: translateY(-2px);
+      box-shadow: 0 0 28px rgba(244, 161, 64, .4);
+    }
+
+    .btn-warm-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 28px;
+      background: transparent;
+      color: #7a6040;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      text-decoration: none;
+      cursor: none;
+      transition: all .2s;
+      border: 1px solid rgba(244, 161, 64, .2);
+      clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+    }
+
+    .btn-warm-ghost:hover {
+      border-color: rgba(244, 161, 64, .5);
+      color: #f4a140;
+      background: rgba(244, 161, 64, .08);
+    }
+
+    /* Hindi decorative side */
+    .h-side-deco {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards 1.1s;
+    }
+
+    .h-deco-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: right;
+    }
+
+    .h-deco-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #7a6040;
+      text-transform: uppercase;
+    }
+
+    .h-deco-val {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 16px;
+      color: #e8d5b7;
+    }
+
+    /* Divider ornament */
+    .h-ornament {
+      text-align: center;
+      font-size: 20px;
+      color: #f4a140;
+      margin: 0 0 80px;
+      opacity: .4;
+      letter-spacing: 12px;
+    }
+
+    /* Section – hindi */
+    .h-section {
+      padding: 100px 0;
+    }
+
+    .h-section-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 60px;
+    }
+
+    .h-sec-num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #f4a140;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .h-sec-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(34px, 5vw, 58px);
+      font-weight: 800;
+      color: #f5e6cc;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .h-sec-title-deva {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      color: #f5e6cc;
+      line-height: 1.1;
+    }
+
+    .h-sec-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(244, 161, 64, .15);
+    }
+
+    /* Writing cards */
+    .h-writing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .h-write-card {
+      background: #1c1409;
+      border: 1px solid rgba(244, 161, 64, .12);
+      padding: 32px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      display: block;
+      transition: all .3s;
+    }
+
+    .h-write-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 0;
+      background: #f4a140;
+      transition: height .3s;
+    }
+
+    .h-write-card:hover::before {
+      height: 100%;
+    }
+
+    .h-write-card:hover {
+      border-color: rgba(244, 161, 64, .4);
+      background: #231908;
+    }
+
+    .h-write-tag {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: .3px;
+      color: #f4a140;
+      margin-bottom: 14px;
+    }
+
+    .h-write-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: #e8d5b7;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .h-write-excerpt {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #7a6040;
+      margin-bottom: 20px;
+    }
+
+    .h-write-pub {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      color: #f4a140;
+      letter-spacing: .5px;
+    }
+
+    .h-write-arrow {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      font-size: 16px;
+      color: #7a6040;
+      transition: all .3s;
+    }
+
+    .h-write-card:hover .h-write-arrow {
+      color: #f4a140;
+      transform: translate(4px, -4px);
+    }
+
+    /* Substack promo */
+    .h-substack {
+      background: linear-gradient(135deg, #1c1409 0%, #231508 100%);
+      border: 1px solid rgba(244, 161, 64, .2);
+      padding: 40px;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      text-decoration: none;
+      transition: all .3s;
+    }
+
+    .h-substack:hover {
+      border-color: rgba(244, 161, 64, .5);
+    }
+
+    .h-substack-left {}
+
+    .h-substack-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #7a6040;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .h-substack-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: 26px;
+      font-weight: 700;
+      color: #f5e6cc;
+      margin-bottom: 8px;
+    }
+
+    .h-substack-desc {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: #b8956a;
+      line-height: 1.7;
+    }
+
+    .h-substack-right {
+      flex-shrink: 0;
+    }
+
+    /* Social – hindi */
+    .h-social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2px;
+    }
+
+    .h-social-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #1c1409;
+      border: 1px solid rgba(244, 161, 64, .12);
+      padding: 28px;
+      text-decoration: none;
+      transition: all .3s;
+      min-height: 140px;
+    }
+
+    .h-social-card:hover {
+      border-color: rgba(244, 161, 64, .4);
+      background: #231908;
+    }
+
+    .h-social-platform {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #7a6040;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .h-social-icon {
+      font-size: 22px;
+      margin-bottom: auto;
+      margin-top: 6px;
+    }
+
+    .h-social-handle {
+      font-family: 'Baloo 2', cursive;
+      font-size: 18px;
+      font-weight: 700;
+      color: #f5e6cc;
+      transition: color .2s;
+    }
+
+    .h-social-card:hover .h-social-handle {
+      color: #f4a140;
+    }
+
+    /* Hindi footer */
+    .h-footer {
+      border-top: 1px solid rgba(244, 161, 64, .15);
+      padding: 40px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .h-footer-left {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 15px;
+      color: #7a6040;
+    }
+
+    .h-footer-left strong {
+      color: #f4a140;
+      font-weight: 600;
+    }
+
+    .h-footer-right {
+      font-family: 'Baloo 2', cursive;
+      font-size: 16px;
+      color: #7a6040;
+    }
+
+    /* ═══════════════════════════════════════════
+       ANIMATIONS & REVEAL
+    ═══════════════════════════════════════════ */
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(24px);
+        transform: translateY(24px)
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: none
       }
     }
 
     @keyframes fadeIn {
       from {
-        opacity: 0;
+        opacity: 0
       }
 
       to {
-        opacity: 1;
+        opacity: 1
       }
     }
 
     .reveal {
       opacity: 0;
       transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transition: opacity .7s ease, transform .7s ease;
     }
 
     .reveal.visible {
@@ -794,360 +1512,578 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: var(--bg);
+      background: #080c0f;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: var(--green-mid);
+      background: rgba(0, 255, 140, .3);
       border-radius: 2px;
     }
 
-    @media (max-width: 900px) {
-      .exp-card {
+    #hindiSide::-webkit-scrollbar-track {
+      background: #120d08;
+    }
+
+    #hindiSide::-webkit-scrollbar-thumb {
+      background: rgba(244, 161, 64, .3);
+    }
+
+    @media(max-width:900px) {
+      .t-exp-card {
         grid-template-columns: 1fr;
         gap: 18px 0;
         padding: 28px;
       }
+
+      .h-writing-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    @media (max-width: 768px) {
-      .page {
+    @media(max-width:768px) {
+
+      .t-page,
+      .h-page {
         padding: 0 20px;
       }
 
-      nav {
+      #techNav,
+      #hindiNav {
         padding: 16px 20px;
       }
 
-      .nav-links {
+      .t-nav-links,
+      .h-nav-links {
         display: none;
       }
 
-      .hero-status {
+      .t-status,
+      .h-side-deco {
         display: none;
       }
 
-      footer {
+      .t-footer,
+      .h-footer {
         flex-direction: column;
         gap: 16px;
         text-align: center;
       }
+    }
+
+    @media(max-width:600px) {
+      .h-hero {
+        align-items: center;
+        text-align: center;
+      }
+
+      .h-eyebrow {
+        justify-content: center;
+      }
+
+      .h-name {
+        letter-spacing: -2px;
+      }
+
+      .h-cta {
+        justify-content: center;
+      }
+
+      .h-sher-mobile {
+        display: block;
+      }
+    }
+
+    .h-sher-mobile {
+      display: none;
+      max-width: 100%;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp .9s ease forwards .75s;
+    }
+
+    .h-sher-mobile .h-ghalib-side-verse {
+      font-size: 15px;
+      text-align: center;
+    }
+
+    .h-sher-mobile .h-ghalib-side-attr {
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor tech" id="cursor"></div>
+  <div class="cursor-ring tech" id="cursorRing"></div>
 
-  <!-- NAV -->
-  <nav id="nav">
-    <div class="nav-logo"><span>~/</span>gagantalreja</div>
-    <ul class="nav-links">
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#connect">Connect</a></li>
-    </ul>
-  </nav>
+  <div id="flipWrapper">
 
-  <div class="page">
+    <!-- ══════════════════════════════════════
+         TECH SIDE (FRONT)
+    ══════════════════════════════════════ -->
+    <div class="face" id="techSide">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-line"></div>
-        <span class="hero-eyebrow-text">Software Engineer · Infrastructure</span>
-      </div>
+      <nav id="techNav">
+        <div class="nav-logo"><span>~/</span>gagantalreja</div>
+        <ul class="t-nav-links">
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#connect">Connect</a></li>
+          <li>
+            <button class="flip-btn flip-btn-tech" onclick="flipToHindi()">
+              <span class="flip-icon">⟳</span> the other side
+            </button>
+          </li>
+        </ul>
+      </nav>
 
-      <h1 class="hero-name">
-        Gagan<br><span class="accent">Talreja</span>
-      </h1>
+      <div class="t-page">
 
-      <div class="hero-meta">
-        <span class="hero-role">Infrastructure Engineer @</span>
-        <a href="https://schrodinger.com" target="_blank" class="hero-company">Schrödinger</a>
-        <span class="meta-sep">·</span>
-        <span class="hero-location">Hyderabad, IN</span>
-      </div>
-
-      <p class="hero-quote">2b || !2b</p>
-
-      <p class="hero-bio">
-        Designing and deploying <strong>scalable infrastructure</strong> on Google Cloud Platform — orchestrating
-        containers with <strong>Kubernetes</strong>, provisioning cloud resources with <strong>Terraform</strong>, and
-        keeping distributed systems reliably production-ready at scale. Also an avid reader and occasional writer.
-      </p>
-
-      <div class="hero-cta-row">
-        <a href="https://linkedin.com/in/gagantalreja" target="_blank" class="btn-primary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-          </svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/gagantalreja" target="_blank" class="btn-ghost">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-          </svg>
-          GitHub
-        </a>
-      </div>
-
-      <div class="hero-status">
-        <div class="status-item">
-          <span class="status-label">Status</span>
-          <span class="status-val"><span class="status-dot"></span>Active</span>
-        </div>
-        <div class="status-item">
-          <span class="status-label">Location</span>
-          <span class="status-val">Hyderabad, IN</span>
-        </div>
-        <div class="status-item">
-          <span class="status-label">Repos</span>
-          <span class="status-val">16</span>
-        </div>
-        <div class="status-item">
-          <span class="status-label">Followers</span>
-          <span class="status-val">29</span>
-        </div>
-      </div>
-
-      <!-- Terminal -->
-      <div class="terminal">
-        <div class="terminal-bar">
-          <div class="t-dot red"></div>
-          <div class="t-dot yellow"></div>
-          <div class="t-dot green"></div>
-          <span class="terminal-title">bash — gagan@schrodinger: ~</span>
-        </div>
-        <div class="terminal-body">
-          <div><span class="t-prompt">gagan@infra:~$ </span><span class="t-cmd">whoami --detailed</span></div>
-          <div class="t-output">
-            <span class="t-key">name</span>: <span class="t-val">"Gagan Talreja"</span> &nbsp;
-            <span class="t-key">role</span>: <span class="t-val">"SWE, Infrastructure"</span> &nbsp;
-            <span class="t-key">company</span>: <span class="t-val">"Schrödinger"</span>
+        <!-- Hero -->
+        <section class="t-hero">
+          <div class="t-eyebrow">
+            <div class="t-eyebrow-line"></div>
+            <span class="t-eyebrow-text">DevOps · SRE · Infrastructure</span>
           </div>
-          <div style="margin-top:6px"><span class="t-prompt">gagan@infra:~$ </span><span class="t-cmd">kubectl get pods
-              --all-namespaces | head -3</span></div>
-          <div class="t-output"><span class="t-comment"># Scalable infra on GCP · Terraform · Kubernetes</span></div>
-          <div style="margin-top:6px"><span class="t-prompt">gagan@infra:~$ </span><span class="t-cmd">echo
-              $PHILOSOPHY</span></div>
-          <div class="t-output"><span class="t-val">"2b || !2b"</span></div>
-          <div style="margin-top:6px"><span class="t-prompt">gagan@infra:~$ </span><span class="t-cursor"></span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-header reveal">
-        <span class="section-number">01 /</span>
-        <h2 class="section-title">Stack</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="skills-grid reveal">
-        <div class="skill-category">
-          <div class="skill-cat-label">// Cloud & Infra</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Google Cloud</span>
-            <span class="skill-tag">AWS</span>
-            <span class="skill-tag">Kubernetes</span>
-            <span class="skill-tag">Terraform</span>
-            <span class="skill-tag">Ansible</span>
+          <h1 class="t-name">Gagan<br><span class="accent">Talreja</span></h1>
+          <div class="t-meta">
+            <span class="t-role">Infrastructure Engineer @</span>
+            <a href="https://schrodinger.com" target="_blank" class="t-company">Schrödinger</a>
           </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat-label">// Containers & VCS</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Helm</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">GitHub</span>
+          <p class="t-bio">Designing and deploying <strong>scalable infrastructure</strong> on AWS and GCP —
+            orchestrating containers with <strong>Kubernetes</strong>, provisioning cloud resources with
+            <strong>Terraform</strong>, and keeping distributed systems reliably production-ready at scale. Also an avid
+            reader and occasional writer.
+          </p>
+          <div class="t-cta">
+            <a href="https://linkedin.com/in/gagantalreja" target="_blank" class="btn-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/gagantalreja" target="_blank" class="btn-ghost">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+              </svg>
+              GitHub
+            </a>
           </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat-label">// Languages</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Bash / Shell</span>
-            <span class="skill-tag">Java</span>
+          <div class="t-status">
+            <div class="t-status-item"><span class="t-status-label">Status</span><span class="t-status-val"><span
+                  class="t-status-dot"></span>Active</span></div>
+            <div class="t-status-item"><span class="t-status-label">Location</span><span
+                class="t-status-val">India</span></div>
           </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat-label">// Databases</div>
-          <div class="skill-tags">
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">MongoDB</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat-label">// Frameworks</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Flask</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <div class="skill-cat-label">// Beyond the Terminal</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Technical Writing</span>
-            <span class="skill-tag">Reading</span>
-            <span class="skill-tag">Open Source</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="section-header reveal">
-        <span class="section-number">02 /</span>
-        <h2 class="section-title">Experience</h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="experience-list">
-
-        <div class="exp-card reveal">
-          <div class="exp-left">
-            <span class="exp-period">2022 — Present</span>
-            <div class="exp-company">Schrödinger</div>
-            <div class="exp-location">Hyderabad, India</div>
-          </div>
-          <div class="exp-right">
-            <div class="exp-role">Software Engineer, Infrastructure</div>
-            <p class="exp-desc">
-              Designed and implemented end-to-end <strong>CI/CD and infrastructure pipelines</strong> for cloud
-              environments, including infrastructure cloning with data, one-click Terraform deployments, and self-hosted
-              GitHub Actions runners on Kubernetes. Drove major efficiency gains by optimizing CI pipelines, enabling
-              parallel executions, automating scaling, and <strong>reducing cloud spend by 25%</strong> while cutting
-              deployment times by up to 2×. Enhanced developer productivity through QoL automations, improved AWS and
-              EKS workflows including <strong>Karpenter</strong> and GMP-based monitoring, customer deployment handling,
-              and mentorship on cost-control scripting.
-            </p>
-            <div class="exp-tags">
-              <span class="exp-tag">GCP</span>
-              <span class="exp-tag">AWS</span>
-              <span class="exp-tag">Kubernetes</span>
-              <span class="exp-tag">Terraform</span>
-              <span class="exp-tag">GitHub Actions</span>
-              <span class="exp-tag">Karpenter</span>
-              <span class="exp-tag">EKS</span>
-              <span class="exp-tag">Python</span>
+          <!-- Terminal -->
+          <div class="terminal">
+            <div class="terminal-bar">
+              <div class="t-dot r"></div>
+              <div class="t-dot y"></div>
+              <div class="t-dot g"></div>
+              <span class="terminal-title">bash — gagan@schrodinger: ~</span>
+            </div>
+            <div class="terminal-body">
+              <div><span class="tp">gagan@infra:~$ </span><span class="tc">whoami --detailed</span></div>
+              <div class="to"><span class="tk">name</span>: <span class="tv">"Gagan Talreja"</span> &nbsp; <span
+                  class="tk">role</span>: <span class="tv">"SWE, Infrastructure"</span> &nbsp; <span
+                  class="tk">company</span>: <span class="tv">"Schrödinger"</span></div>
+              <div style="margin-top:6px"><span class="tp">gagan@infra:~$ </span><span class="tc">kubectl get pods
+                  --all-namespaces | head -3</span></div>
+              <div class="to"><span class="tcomm"># Scalable infra on Cloud · Terraform · Kubernetes</span></div>
+              <div style="margin-top:6px"><span class="tp">gagan@infra:~$ </span><span class="tcursor"></span></div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div class="exp-card reveal">
-          <div class="exp-left">
-            <span class="exp-period">2021 — 2022</span>
-            <div class="exp-company">Innovaccer</div>
-            <div class="exp-location">Noida, India</div>
+        <!-- Skills -->
+        <section class="t-section" id="skills">
+          <div class="t-section-header reveal">
+            <span class="t-sec-num">01 /</span>
+            <h2 class="t-sec-title">Stack</h2>
+            <div class="t-sec-line"></div>
           </div>
-          <div class="exp-right">
-            <div class="exp-role">Software Engineer</div>
-            <p class="exp-desc">
-              Led the development and optimization of a <strong>one-click, end-to-end cloud deployment pipeline</strong>
-              using Terraform and Python, improving code quality and making deployments <strong>three times
-                faster</strong>. Built automation for AWS cost optimization, security tooling, infrastructure
-              installation, and data migrations across <strong>RDS, Elasticsearch, and S3</strong>. Worked closely with
-              customers and incident management teams to resolve production incidents and deliver detailed root cause
-              analyses.
-            </p>
-            <div class="exp-tags">
-              <span class="exp-tag">Terraform</span>
-              <span class="exp-tag">Python</span>
-              <span class="exp-tag">AWS</span>
-              <span class="exp-tag">RDS</span>
-              <span class="exp-tag">Elasticsearch</span>
-              <span class="exp-tag">S3</span>
-              <span class="exp-tag">Docker</span>
+          <div class="t-skills-grid reveal">
+            <div class="t-skill-cat">
+              <div class="t-skill-cat-label">// Cloud & Infra</div>
+              <div class="t-tags"><span class="t-tag">Google Cloud</span><span class="t-tag">AWS</span><span
+                  class="t-tag">Kubernetes</span><span class="t-tag">Terraform</span><span class="t-tag">Ansible</span>
+              </div>
+            </div>
+            <div class="t-skill-cat">
+              <div class="t-skill-cat-label">// Containers & VCS</div>
+              <div class="t-tags"><span class="t-tag">Docker</span><span class="t-tag">Helm</span><span
+                  class="t-tag">Git</span><span class="t-tag">GitHub Actions</span></div>
+            </div>
+            <div class="t-skill-cat">
+              <div class="t-skill-cat-label">// Languages</div>
+              <div class="t-tags"><span class="t-tag">Python</span><span class="t-tag">Bash / Shell</span><span
+                  class="t-tag">Java</span></div>
+            </div>
+            <div class="t-skill-cat">
+              <div class="t-skill-cat-label">// Databases</div>
+              <div class="t-tags"><span class="t-tag">PostgreSQL</span><span class="t-tag">MongoDB</span><span
+                  class="t-tag">Elasticsearch</span></div>
+            </div>
+            <div class="t-skill-cat">
+              <div class="t-skill-cat-label">// Frameworks</div>
+              <div class="t-tags"><span class="t-tag">Flask</span></div>
+            </div>
+            <div class="t-skill-cat">
+              <div class="t-skill-cat-label">// Beyond the Terminal</div>
+              <div class="t-tags"><span class="t-tag">Hindi Writing</span><span class="t-tag">Reading</span><span
+                  class="t-tag">Open Source</span></div>
             </div>
           </div>
-        </div>
+        </section>
 
-      </div>
-    </section>
+        <!-- Experience -->
+        <section class="t-section" id="experience">
+          <div class="t-section-header reveal">
+            <span class="t-sec-num">02 /</span>
+            <h2 class="t-sec-title">Experience</h2>
+            <div class="t-sec-line"></div>
+          </div>
+          <div class="t-exp-list">
+            <div class="t-exp-card reveal">
+              <div>
+                <span class="t-exp-period">2023 — Present</span>
+                <div class="t-exp-company">Schrödinger</div>
+                <div class="t-exp-loc">Hyderabad, India</div>
+              </div>
+              <div>
+                <div class="t-exp-role">Senior Developer, Infrastructure</div>
+                <p class="t-exp-desc">Designed and implemented end-to-end <strong>CI/CD and infrastructure
+                    pipelines</strong> for cloud environments, including infrastructure cloning with data, one-click
+                  Terraform deployments, and self-hosted GitHub Actions runners on Kubernetes. Drove major efficiency
+                  gains by optimizing CI pipelines, enabling parallel executions, automating scaling, and
+                  <strong>reducing cloud spend by 25%</strong> while cutting deployment times by up to 2×. Enhanced
+                  developer productivity through QoL automations, improved AWS and EKS workflows including
+                  <strong>Karpenter</strong> and GMP-based monitoring, customer deployment handling, and mentorship on
+                  cost-control scripting.
+                </p>
+                <div class="t-exp-tags"><span class="t-exp-tag">GCP</span><span class="t-exp-tag">AWS</span><span
+                    class="t-exp-tag">Kubernetes</span><span class="t-exp-tag">Terraform</span><span
+                    class="t-exp-tag">GitHub Actions</span><span class="t-exp-tag">Karpenter</span><span
+                    class="t-exp-tag">EKS</span><span class="t-exp-tag">Python</span></div>
+              </div>
+            </div>
+            <div class="t-exp-card reveal">
+              <div>
+                <span class="t-exp-period">2021 — 2023</span>
+                <div class="t-exp-company">Innovaccer</div>
+                <div class="t-exp-loc">Noida, India</div>
+              </div>
+              <div>
+                <div class="t-exp-role">Site Reliability Engineer</div>
+                <p class="t-exp-desc">Led the development and optimization of a <strong>one-click, end-to-end cloud
+                    deployment pipeline</strong> using Terraform and Python, improving code quality and making
+                  deployments <strong>three times faster</strong>. Built automation for AWS cost optimization, security
+                  tooling, infrastructure installation, and data migrations across <strong>RDS, Elasticsearch, and
+                    S3</strong>. Worked closely with customers and incident management teams to resolve production
+                  incidents and deliver detailed root cause analyses.</p>
+                <div class="t-exp-tags"><span class="t-exp-tag">Terraform</span><span
+                    class="t-exp-tag">Python</span><span class="t-exp-tag">AWS</span><span
+                    class="t-exp-tag">RDS</span><span class="t-exp-tag">Elasticsearch</span><span
+                    class="t-exp-tag">S3</span><span class="t-exp-tag">Docker</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <!-- CONNECT -->
-    <section id="connect">
-      <div class="section-header reveal">
-        <span class="section-number">03 /</span>
-        <h2 class="section-title">Connect</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="connect-grid reveal">
-        <a href="https://linkedin.com/in/gagantalreja" target="_blank" class="connect-card">
-          <div class="connect-platform">// Professional</div>
-          <div class="connect-icon">💼</div>
-          <div class="connect-handle">LinkedIn</div>
-        </a>
-        <a href="https://github.com/gagantalreja" target="_blank" class="connect-card">
-          <div class="connect-platform">// Code</div>
-          <div class="connect-icon">⌥</div>
-          <div class="connect-handle">GitHub</div>
-        </a>
-        <a href="https://www.goodreads.com/user/show/177871383-gagan-talreja" target="_blank" class="connect-card">
-          <div class="connect-platform">// Currently Reading</div>
-          <div class="connect-icon">📚</div>
-          <div class="connect-handle">Goodreads</div>
-        </a>
-      </div>
-    </section>
+        <!-- Connect -->
+        <section class="t-section" id="connect">
+          <div class="t-section-header reveal">
+            <span class="t-sec-num">03 /</span>
+            <h2 class="t-sec-title">Connect</h2>
+            <div class="t-sec-line"></div>
+          </div>
+          <div class="t-connect-grid reveal">
+            <a href="https://linkedin.com/in/gagantalreja" target="_blank" class="t-connect-card">
+              <div class="t-connect-platform">// Professional</div>
+              <div class="t-connect-icon">💼</div>
+              <div class="t-connect-handle">LinkedIn</div>
+            </a>
+            <a href="https://github.com/gagantalreja" target="_blank" class="t-connect-card">
+              <div class="t-connect-platform">// Code</div>
+              <div class="t-connect-icon">⌥</div>
+              <div class="t-connect-handle">GitHub</div>
+            </a>
+          </div>
+        </section>
 
-    <!-- FOOTER -->
-    <footer class="reveal">
-      <div class="footer-left">
-        <strong>Gagan Talreja</strong> — Software Engineer, Infrastructure at Schrödinger
-      </div>
-      <div class="footer-right">
-        <span style="color: var(--green)">2b</span> || <span style="color: var(--text-dim)">!2b</span>
-      </div>
-    </footer>
+        <footer class="t-footer reveal">
+          <div class="t-footer-left"><strong>Gagan Talreja</strong> — Software Engineer, Infrastructure at Schrödinger
+          </div>
+          <div class="t-footer-right"><span style="color:#00ff8c">2b</span> || <span style="color:#607080">!2b</span>
+          </div>
+        </footer>
 
-  </div>
+      </div><!-- /t-page -->
+    </div><!-- /techSide -->
+
+
+    <!-- ══════════════════════════════════════
+         HINDI SIDE (BACK)
+    ══════════════════════════════════════ -->
+    <div class="face" id="hindiSide">
+
+      <nav id="hindiNav">
+        <div class="h-nav-logo">गागन तलरेजा <span>/ gagantalreja</span></div>
+        <ul class="h-nav-links">
+          <li><a href="#writing">लेखन</a></li>
+          <li><a href="#h-connect">जुड़िए</a></li>
+          <li>
+            <button class="flip-btn flip-btn-hindi" onclick="flipToTech()">
+              <span class="flip-icon">⟳</span> धंधा-पानी
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="h-page">
+
+        <!-- Hero -->
+        <section class="h-hero">
+          <h1 class="h-name">गागन<br><span class="h-accent">तलरेजा</span></h1>
+          <p class="h-tagline-en">क़लमघसीट ॰ पढ़ीस</p>
+          <div class="h-sher-mobile">
+            <p class="h-ghalib-side-verse">आते हैं ग़ैब से ये मज़ामीं ख़याल में</p>
+            <p class="h-ghalib-side-verse">'ग़ालिब' सरीर-ए-ख़ामा नवा-ए-सरोश है</p>
+            <span class="h-ghalib-side-attr">— मिर्ज़ा ग़ालिब</span>
+          </div>
+          <div class="h-cta">
+            <a href="#writing" class="btn-saffron"
+              onclick="document.getElementById('writing').scrollIntoView({behavior:'smooth'}); return false;">मेरा लिखा
+              पढ़िए ↓</a>
+          </div>
+          <div class="h-side-deco">
+            <div class="h-ghalib-side">
+              <p class="h-ghalib-side-verse">आते हैं ग़ैब से ये मज़ामीं ख़याल में</p>
+              <p class="h-ghalib-side-verse">'ग़ालिब' सरीर-ए-ख़ामा नवा-ए-सरोश है</p>
+              <span class="h-ghalib-side-attr">— मिर्ज़ा ग़ालिब</span>
+            </div>
+          </div>
+          <div class="h-ornament" style="margin-top:60px">— ✦ —</div>
+        </section>
+
+        <!-- Writing -->
+        <section class="h-section" id="writing">
+          <div class="h-section-header reveal">
+            <span class="h-sec-num">01 /</span>
+            <h2 class="h-sec-title-deva">प्रकाशित रचनाएँ</h2>
+            <div class="h-sec-line"></div>
+          </div>
+
+          <div class="h-writing-grid reveal">
+
+            <a href="https://hindwi.org/bela/schooli-nibandhon-me-mahatma-gandhi-gagan-talreja" target="_blank"
+              class="h-write-card">
+              <div class="h-write-arrow">↗</div>
+              <span class="h-write-tag">हिन्दवी बेला · लेख</span>
+              <div class="h-write-title">स्कूली निबंधों में महात्मा गांधी</div>
+              <p class="h-write-excerpt">मेरे भीतर के बच्चे की तरफ़ से बापू को समर्पित।</p>
+
+            </a>
+
+            <a href="https://hindwi.org/bela/hum-chutkulon-se-khafa-hain-gagan-talreja" target="_blank"
+              class="h-write-card">
+              <div class="h-write-arrow">↗</div>
+              <span class="h-write-tag">हिन्दवी बेला · व्यंग्य</span>
+              <div class="h-write-title">हम चुटकुलों से ख़फ़ा हैं</div>
+              <p class="h-write-excerpt">रिडिक्यूलस बातों का मुद्दा बना देने पर।</p>
+
+            </a>
+
+            <a href="https://hindwi.org/bela/pyaar-ke-bazaar-mein-gagan-talreja" target="_blank" class="h-write-card">
+              <div class="h-write-arrow">↗</div>
+              <span class="h-write-tag">हिन्दवी बेला · व्यंग्य</span>
+              <div class="h-write-title">प्यार के बाज़ार में</div>
+              <p class="h-write-excerpt">प्रेम के बाजारीकरण पर।</p>
+
+            </a>
+
+            <a href="https://drive.google.com/file/d/1PpcWfrtucbKjqpxnIsycKSclis8W-HAZ/view?usp=drivesdk"
+              target="_blank" class="h-write-card">
+              <div class="h-write-arrow">↗</div>
+              <span class="h-write-tag">छाँह पत्रिका · व्यंग्य</span>
+              <div class="h-write-title">हेलो प्रकृति</div>
+              <p class="h-write-excerpt">दिवसों के नाम पर होने वाले ढोंग पर।</p>
+
+            </a>
+
+            <a href="https://x.com/gagan_talreja/status/2009479615241441447?s=20" target="_blank" class="h-write-card">
+              <div class="h-write-arrow">↗</div>
+              <span class="h-write-tag">व्यंग्य यात्रा पत्रिका · व्यंग्य</span>
+              <div class="h-write-title">जंगल में मोर नाचा</div>
+              <p class="h-write-excerpt">सोशल मीडिया स्टारडम पर।</p>
+
+            </a>
+
+            <a href="https://www.instagram.com/p/DTo8Tuqj94r" target="_blank" class="h-write-card">
+              <div class="h-write-arrow">↗</div>
+              <span class="h-write-tag">चतरन · बाल-कविता</span>
+              <div class="h-write-title">सूरज</div>
+              <p class="h-write-excerpt">मेरे भीतर बसने वाले बच्चे को सूरज ऐसा दिखता है।</p>
+
+            </a>
+
+          </div>
+
+        </section>
+
+        <!-- Social / Connect -->
+        <section class="h-section" id="h-connect">
+          <div class="h-section-header reveal">
+            <span class="h-sec-num">02 /</span>
+            <h2 class="h-sec-title-deva">जुड़िए</h2>
+            <div class="h-sec-line"></div>
+          </div>
+          <div class="h-social-grid reveal">
+            <a href="https://instagram.com/gagantalreja" target="_blank" class="h-social-card">
+              <div class="h-social-platform">// Instagram</div>
+              <div class="h-social-icon">📷</div>
+              <div class="h-social-handle">@gagantalreja</div>
+            </a>
+            <a href="https://x.com/gagan_talreja" target="_blank" class="h-social-card">
+              <div class="h-social-platform">// X / Twitter</div>
+              <div class="h-social-icon">𝕏</div>
+              <div class="h-social-handle">@gagan_talreja</div>
+            </a>
+            <a href="https://www.facebook.com/gagan.talreja.3" target="_blank" class="h-social-card">
+              <div class="h-social-platform">// Facebook</div>
+              <div class="h-social-icon">📘</div>
+              <div class="h-social-handle">Gagan Talreja</div>
+            </a>
+            <a href="https://gagantalreja.substack.com/" target="_blank" class="h-social-card">
+              <div class="h-social-platform">// Substack</div>
+              <div class="h-social-icon">✍️</div>
+              <div class="h-social-handle">gagantalreja</div>
+            </a>
+            <a href="https://www.goodreads.com/user/show/177871383-gagan-talreja" target="_blank" class="h-social-card">
+              <div class="h-social-platform">// Currently Reading</div>
+              <div class="h-social-icon">📚</div>
+              <div class="h-social-handle">Goodreads</div>
+            </a>
+          </div>
+        </section>
+
+        <footer class="h-footer reveal">
+          <div class="h-footer-left"><strong>गागन तलरेजा</strong></div>
+          <div class="h-footer-right">जो रचेगा, कैसे बचेगा &nbsp;<span
+              style="font-size:11px; letter-spacing:1.5px; opacity:0.6;">— श्रीकांत वर्मा</span></div>
+        </footer>
+
+      </div><!-- /h-page -->
+    </div><!-- /hindiSide -->
+
+  </div><!-- /flipWrapper -->
+
 
   <script>
-    // Custom cursor
+    // ── Cursor ──────────────────────────────────
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
     let mx = 0, my = 0, rx = 0, ry = 0;
 
     document.addEventListener('mousemove', e => {
       mx = e.clientX; my = e.clientY;
-      cursor.style.left = mx + 'px';
-      cursor.style.top = my + 'px';
+      cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
     });
-
     (function animateRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
+      rx += (mx - rx) * .12; ry += (my - ry) * .12;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
       requestAnimationFrame(animateRing);
     })();
 
-    document.querySelectorAll('a, button, .skill-category, .exp-card, .connect-card').forEach(el => {
+    function addHoverListeners(el) {
       el.addEventListener('mouseenter', () => ring.classList.add('hover'));
       el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
-    });
+    }
+    document.querySelectorAll('a,button,.t-skill-cat,.t-exp-card,.t-connect-card,.h-write-card,.h-social-card,.h-substack').forEach(addHoverListeners);
 
-    // Nav scroll
-    const nav = document.getElementById('nav');
+    // ── Nav scroll ──────────────────────────────
+    const techNav = document.getElementById('techNav');
+    const hindiNav = document.getElementById('hindiNav');
+    const techSide = document.getElementById('techSide');
+    const hindiSide = document.getElementById('hindiSide');
+
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
+      techNav.classList.toggle('scrolled', window.scrollY > 60);
+      hindiNav.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // Scroll reveal
-    const observer = new IntersectionObserver(entries => {
+    // ── Scroll reveal ───────────────────────────
+    const revealObs = new IntersectionObserver(entries => {
       entries.forEach((e, i) => {
         if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100);
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }, { threshold: .1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // ── Flip logic ──────────────────────────────
+    let isFlipping = false;
+    let currentSide = 'tech'; // 'tech' or 'hindi'
+
+    function flipToHindi() {
+      if (isFlipping) return;
+      isFlipping = true;
+
+      // Animate tech side out
+      techSide.classList.add('flipping-out');
+
+      setTimeout(() => {
+        techSide.style.display = 'none';
+        techSide.classList.remove('flipping-out');
+
+        hindiSide.style.display = 'block';
+        hindiSide.classList.add('flipping-in');
+
+        // Switch cursor theme
+        cursor.classList.replace('tech', 'hindi');
+        ring.classList.replace('tech', 'hindi');
+
+        window.scrollTo(0, 0);
+        currentSide = 'hindi';
+
+        setTimeout(() => {
+          hindiSide.classList.remove('flipping-in');
+          isFlipping = false;
+        }, 450);
+      }, 420);
+    }
+
+    function flipToTech() {
+      if (isFlipping) return;
+      isFlipping = true;
+
+      hindiSide.classList.add('flipping-out');
+
+      setTimeout(() => {
+        hindiSide.style.display = 'none';
+        hindiSide.classList.remove('flipping-out');
+
+        techSide.style.display = 'block';
+        techSide.classList.add('flipping-in');
+
+        // Switch cursor theme
+        cursor.classList.replace('hindi', 'tech');
+        ring.classList.replace('hindi', 'tech');
+
+        window.scrollTo(0, 0);
+        currentSide = 'tech';
+
+        setTimeout(() => {
+          techSide.classList.remove('flipping-in');
+          isFlipping = false;
+        }, 450);
+      }, 420);
+    }
   </script>
+
 </body>
 
 </html>
