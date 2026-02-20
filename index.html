@@ -976,11 +976,12 @@
 
     /* Hindi hero */
     .h-hero {
-      min-height: 100vh;
+      min-height: auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding-top: 100px;
+      padding-bottom: 60px;
       position: relative;
     }
 
@@ -1209,11 +1210,13 @@
       margin: 0 0 80px;
       opacity: .4;
       letter-spacing: 12px;
+    }      to   { transform: translateX(-50%); }
     }
 
     /* Section – hindi */
     .h-section {
-      padding: 100px 0;
+      padding: 120px 0 80px;
+      scroll-margin-top: 80px;
     }
 
     .h-section-header {
@@ -1265,13 +1268,29 @@
     .h-write-card {
       background: #1c1409;
       border: 1px solid rgba(244, 161, 64, .12);
-      padding: 32px;
+      padding: 28px 32px;
       text-decoration: none;
       position: relative;
       overflow: hidden;
-      display: block;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
       transition: all .3s;
     }
+
+    .h-write-pub-img {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      object-fit: cover;
+      opacity: 0.72;
+      margin-top: 2px;
+      border: 1px solid rgba(244, 161, 64, .15);
+      transition: opacity .3s;
+    }
+    .h-write-card:hover .h-write-pub-img { opacity: 1; }
+    .h-write-content { flex: 1; min-width: 0; }
 
     .h-write-card::before {
       content: '';
@@ -1844,11 +1863,11 @@
         <!-- Hero -->
         <section class="h-hero">
           <h1 class="h-name">गगन<br><span class="h-accent">तलरेजा</span></h1>
-          <p class="h-tagline-en">क़लमघसीट ॰ पढ़ीस</p>
+          <p class="h-tagline-en">पढ़ीस ॰ क़लमघसीट</p>
           <div class="h-sher-mobile">
-            <p class="h-ghalib-side-verse">आते हैं ग़ैब से ये मज़ामीं ख़याल में</p>
-            <p class="h-ghalib-side-verse">'ग़ालिब' सरीर-ए-ख़ामा नवा-ए-सरोश है</p>
-            <span class="h-ghalib-side-attr">— मिर्ज़ा ग़ालिब</span>
+            <p class="h-ghalib-side-verse">होशियारी दिल-ए-नादान बहुत करता है</p>
+            <p class="h-ghalib-side-verse">रंज कम सहता है एलान बहुत करता है</p>
+            <span class="h-ghalib-side-attr">— इरफ़ान सिद्दीक़ी</span>
           </div>
           <div class="h-cta">
             <a href="#writing" class="btn-saffron"
@@ -1857,14 +1876,13 @@
           </div>
           <div class="h-side-deco">
             <div class="h-ghalib-side">
-              <p class="h-ghalib-side-verse">आते हैं ग़ैब से ये मज़ामीं ख़याल में</p>
-              <p class="h-ghalib-side-verse">'ग़ालिब' सरीर-ए-ख़ामा नवा-ए-सरोश है</p>
-              <span class="h-ghalib-side-attr">— मिर्ज़ा ग़ालिब</span>
+              <p class="h-ghalib-side-verse">होशियारी दिल-ए-नादान बहुत करता है</p>
+              <p class="h-ghalib-side-verse">रंज कम सहता है एलान बहुत करता है</p>
+              <span class="h-ghalib-side-attr">— इरफ़ान सिद्दीक़ी</span>
             </div>
           </div>
-          <div class="h-ornament" style="margin-top:60px">— ✦ —</div>
-        </section>
 
+        </section>
         <!-- Writing -->
         <section class="h-section" id="writing">
           <div class="h-section-header reveal">
@@ -1876,54 +1894,48 @@
           <div class="h-writing-grid reveal">
 
             <a href="https://hindwi.org/bela/schooli-nibandhon-me-mahatma-gandhi-gagan-talreja" target="_blank"
-              class="h-write-card">
+              class="h-write-card" data-pub="hindwi" data-pub="hindwi" data-pub="hindwi" data-pub="hindwi" data-pub="hindwi" data-pub="hindwi" data-pub="hindwi">
               <div class="h-write-arrow">↗</div>
               <span class="h-write-tag">हिन्दवी बेला · लेख</span>
               <div class="h-write-title">स्कूली निबंधों में महात्मा गांधी</div>
               <p class="h-write-excerpt">मेरे भीतर के बच्चे की तरफ़ से बापू को समर्पित।</p>
-
             </a>
 
             <a href="https://hindwi.org/bela/hum-chutkulon-se-khafa-hain-gagan-talreja" target="_blank"
-              class="h-write-card">
+              class="h-write-card" data-pub="hindwi">
               <div class="h-write-arrow">↗</div>
               <span class="h-write-tag">हिन्दवी बेला · व्यंग्य</span>
               <div class="h-write-title">हम चुटकुलों से ख़फ़ा हैं</div>
               <p class="h-write-excerpt">रिडिक्यूलस बातों का मुद्दा बना देने पर।</p>
-
             </a>
 
-            <a href="https://hindwi.org/bela/pyaar-ke-bazaar-mein-gagan-talreja" target="_blank" class="h-write-card">
+            <a href="https://hindwi.org/bela/pyaar-ke-bazaar-mein-gagan-talreja" target="_blank" class="h-write-card" data-pub="hindwi">
               <div class="h-write-arrow">↗</div>
               <span class="h-write-tag">हिन्दवी बेला · व्यंग्य</span>
               <div class="h-write-title">प्यार के बाज़ार में</div>
               <p class="h-write-excerpt">प्रेम के बाजारीकरण पर।</p>
-
             </a>
 
             <a href="https://drive.google.com/file/d/1PpcWfrtucbKjqpxnIsycKSclis8W-HAZ/view?usp=drivesdk"
-              target="_blank" class="h-write-card">
+              target="_blank" class="h-write-card" data-pub="chhanh">
               <div class="h-write-arrow">↗</div>
               <span class="h-write-tag">छाँह पत्रिका · व्यंग्य</span>
               <div class="h-write-title">हेलो प्रकृति</div>
               <p class="h-write-excerpt">दिवसों के नाम पर होने वाले ढोंग पर।</p>
-
             </a>
 
-            <a href="https://x.com/gagan_talreja/status/2009479615241441447?s=20" target="_blank" class="h-write-card">
+            <a href="https://x.com/gagan_talreja/status/2009479615241441447?s=20" target="_blank" class="h-write-card" data-pub="vyangya-yatra">
               <div class="h-write-arrow">↗</div>
               <span class="h-write-tag">व्यंग्य यात्रा पत्रिका · व्यंग्य</span>
               <div class="h-write-title">जंगल में मोर नाचा</div>
               <p class="h-write-excerpt">सोशल मीडिया स्टारडम पर।</p>
-
             </a>
 
-            <a href="https://www.instagram.com/p/DTo8Tuqj94r" target="_blank" class="h-write-card">
+            <a href="https://www.instagram.com/p/DTo8Tuqj94r" target="_blank" class="h-write-card" data-pub="chatran">
               <div class="h-write-arrow">↗</div>
               <span class="h-write-tag">चतरन · बाल-कविता</span>
               <div class="h-write-title">सूरज</div>
               <p class="h-write-excerpt">मेरे भीतर बसने वाले बच्चे को सूरज ऐसा दिखता है।</p>
-
             </a>
 
           </div>
@@ -1931,7 +1943,7 @@
         </section>
 
         <!-- Social / Connect -->
-        <section class="h-section" id="h-connect">
+        <section class="h-section" id="h-connect" style="scroll-margin-top:80px; padding-top:100px">
           <div class="h-section-header reveal">
             <span class="h-sec-num">02 /</span>
             <h2 class="h-sec-title-deva">जुड़िए</h2>
@@ -1979,6 +1991,38 @@
 
 
   <script>
+
+    // ── Publication image map ────────────────────
+    // To add a new publication: add an entry to PUB_IMAGES with the key
+    // matching the data-pub attribute on the card. Image will be injected automatically.
+    const PUB_IMAGES = {
+      'hindwi':        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44"><rect width="44" height="44" fill="%231a1200"/><text x="22" y="30" font-size="22" text-anchor="middle" fill="%23f0c060" font-family="serif" font-weight="bold">हि</text></svg>',
+      'chhanh':        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44"><rect width="44" height="44" fill="%23001a0a"/><text x="22" y="30" font-size="22" text-anchor="middle" fill="%2360c090" font-family="serif" font-weight="bold">छाँ</text></svg>',
+      'vyangya-yatra': 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44"><rect width="44" height="44" fill="%231a0800"/><text x="22" y="30" font-size="22" text-anchor="middle" fill="%23e07040" font-family="serif" font-weight="bold">व्य</text></svg>',
+      'chatran':       'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44"><rect width="44" height="44" fill="%2300101a"/><text x="22" y="30" font-size="22" text-anchor="middle" fill="%2360b0e0" font-family="serif" font-weight="bold">च</text></svg>',
+    };
+
+    // Auto-inject publication images into writing cards
+    document.querySelectorAll('.h-write-card[data-pub]').forEach(card => {
+      const pubKey = card.dataset.pub;
+      const imgSrc = PUB_IMAGES[pubKey];
+      if (!imgSrc) return;
+
+      // Wrap existing content in .h-write-content
+      const wrapper = document.createElement('div');
+      wrapper.className = 'h-write-content';
+      while (card.firstChild) wrapper.appendChild(card.firstChild);
+
+      // Create image
+      const img = document.createElement('img');
+      img.src = imgSrc;
+      img.className = 'h-write-pub-img';
+      img.alt = pubKey;
+
+      card.appendChild(img);
+      card.appendChild(wrapper);
+    });
+
     // ── Cursor ──────────────────────────────────
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
@@ -2021,13 +2065,12 @@
 
     // ── Flip logic ──────────────────────────────
     let isFlipping = false;
-    let currentSide = 'tech'; // 'tech' or 'hindi'
+    let currentSide = 'tech';
 
     function flipToHindi() {
       if (isFlipping) return;
       isFlipping = true;
 
-      // Animate tech side out
       techSide.classList.add('flipping-out');
 
       setTimeout(() => {
@@ -2037,7 +2080,6 @@
         hindiSide.style.display = 'block';
         hindiSide.classList.add('flipping-in');
 
-        // Switch cursor theme
         cursor.classList.replace('tech', 'hindi');
         ring.classList.replace('tech', 'hindi');
 
@@ -2064,7 +2106,6 @@
         techSide.style.display = 'block';
         techSide.classList.add('flipping-in');
 
-        // Switch cursor theme
         cursor.classList.replace('hindi', 'tech');
         ring.classList.replace('hindi', 'tech');
 
